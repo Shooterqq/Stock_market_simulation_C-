@@ -1,0 +1,91 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty2", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty=double
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         and
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty2=float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
+  (kompilowanie pliku źródłowego „main.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          C:\Users\Piotr Wu\source\repos\ProjectOne\user.h(51,9):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::pair<const std::string,float>::pair<const char(&)[6],double,0>(_Other1,_Other2 &&) noexcept(false)” funkcji szablon
+          with
+          [
+              _Other1=const char (&)[6],
+              _Other2=double
+          ]
+              C:\Users\Piotr Wu\source\repos\ProjectOne\main.cpp(25,24):
+              zobacz pierwsze odwołanie do elementu „std::pair<const std::string,float>::pair” w „main”
+  
+  user.cpp
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,21): warning C4305: "inicjowanie": obcięcie z "double" do "_Ty"
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,21): warning C4305:         with
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,21): warning C4305:         [
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,21): warning C4305:             _Ty=float
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,21): warning C4305:         ]
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,33): warning C4305: "inicjowanie": obcięcie z "double" do "_Ty"
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,33): warning C4305:         with
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,33): warning C4305:         [
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,33): warning C4305:             _Ty=float
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(46,33): warning C4305:         ]
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,23): warning C4305: "inicjowanie": obcięcie z "double" do "_Ty"
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,23): warning C4305:         with
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,23): warning C4305:         [
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,23): warning C4305:             _Ty=float
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,23): warning C4305:         ]
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,29): warning C4305: "inicjowanie": obcięcie z "double" do "_Ty"
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,29): warning C4305:         with
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,29): warning C4305:         [
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,29): warning C4305:             _Ty=float
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(47,29): warning C4305:         ]
+C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(125,37): warning C4101: "e": lokalna zmienna, do której nie istnieje odwołanie
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty2", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty=double
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         and
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty2=float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
+  (kompilowanie pliku źródłowego „user.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          C:\Users\Piotr Wu\source\repos\ProjectOne\user.h(51,9):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::pair<const std::string,float>::pair<const char(&)[6],double,0>(_Other1,_Other2 &&) noexcept(false)” funkcji szablon
+          with
+          [
+              _Other1=const char (&)[6],
+              _Other2=double
+          ]
+              C:\Users\Piotr Wu\source\repos\ProjectOne\user.h(50,5):
+              zobacz pierwsze odwołanie do elementu „std::pair<const std::string,float>::pair” w „UserAccount::UserAccount”
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty2", możliwa utrata danych
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty=int
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         and
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty2=float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
+  (kompilowanie pliku źródłowego „user.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54):
+      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
+          C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(61,5):
+          zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::pair<const std::string,float>::pair<const char(&)[11],int,0>(_Other1,_Other2 &&) noexcept(false)” funkcji szablon
+          with
+          [
+              _Other1=const char (&)[11],
+              _Other2=int
+          ]
+              C:\Users\Piotr Wu\source\repos\ProjectOne\user.cpp(54,1):
+              zobacz pierwsze odwołanie do elementu „std::pair<const std::string,float>::pair” w „void __cdecl `dynamic initializer for 'course_assets''(void)”
+  
+  Generowanie kodu...
+  ProjectOne.vcxproj -> C:\Users\Piotr Wu\source\repos\ProjectOne\x64\Debug\ProjectOne.exe
