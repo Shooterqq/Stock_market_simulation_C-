@@ -12,6 +12,7 @@
 #include <fstream>
 //#include <matplotlibcpp.h>        // later for charts
 
+float chooseMeters(void);
 
 // --------------------------------------------------------------------------------------------------------------------------------------------- //
 
@@ -64,7 +65,7 @@ public:
     void showGlobalWallet() const override;
     void buyDeposit(walletGoods wallet);       // kup lokate
     void buyGold(walletGoods wallet);          
-    void withdrawMoney(walletGoods &wallet);    
+    void withdrawMoney(walletGoods wallet);    
 
 private:
     int deposit_Bonus{ 2 };
@@ -76,10 +77,13 @@ private:
 class UserAccountInvest : public UserAccount
 {
 public:
-    void buyShares(walletGoods& wallet);
-    void buyHouses(walletGoods& wallet);
-    void buyCurrencies(walletGoods& wallet);     // kup walluty
-    void buyCrypto(walletGoods& wallet);
+    void buyShares(walletGoods wallet);
+    void buyHouses(walletGoods wallet);
+    void showGlobalWallet() const;
+    void showMyWallet() const;
+    void generateReport() const;
+    void buyCurrencies(walletGoods wallet);     // kup walluty
+    void buyCrypto(walletGoods wallet);
 
 private:
     int shares_Bonus{ 4 };

@@ -2,7 +2,11 @@
 #include "user.h"
 #include "instrument.h"
 
-
+void add(int a, int b)
+{
+    std::cout << "Hello World! \n" << a << b << "\n";
+    a *= b;
+}
 
 int main()
 {
@@ -24,6 +28,13 @@ int main()
     // Wywołanie funkcji z mapą utworzoną bezpośrednio w wywołaniu
     account2.buyDeposit({ { "Money", 300.0 } });
 
+
+    UserAccountInvest account3;
+     
+    account3.buyHouses({ { "Money", 19000.0 } });
+
+    account3.showMyWallet();
+
     return 0;
 
 }
@@ -31,11 +42,7 @@ int main()
 
 
 
-void add(int a, int b)
-{
-    std::cout << "Hello World! \n" << a << b << "\n";
-    a *= b;
-}
+
 
 
 
