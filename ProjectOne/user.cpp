@@ -167,14 +167,18 @@ void UserAccount::showHistory() const
             << '\n';
     }
 }
-void UserAccount::getClientName() const
+std::string UserAccount::getClientName() const
 {
     std::cout << client_Name;
+
+    return client_Name;
 }
 
-void UserAccount::getClientSurname() const
+std::string UserAccount::getClientSurname() const
 {
     std::cout << client_Surname;
+
+    return client_Surname;
 }
 
 void UserAccount::getNumberOfClients() const
@@ -521,3 +525,18 @@ void UserAccountInvest::buyCrypto(walletGoods wallet)
 }
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

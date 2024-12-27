@@ -27,6 +27,7 @@ private:
     std::string client_Name;
     std::string client_Surname;
     static int client_Id;
+    int client_Account_Num;
     std::map<walletInstruments, walletGoods> client_Wallet;     // course, quantity owned
     bool account_Activation_Status;
     walletHistory client_History;
@@ -37,8 +38,8 @@ public:
     UserAccount();
     UserAccount(const std::string &name, const std::string &surname, float &usd_Start_Val);
     ~UserAccount();
-    void getClientName() const;
-    void getClientSurname() const;
+    std::string getClientName() const;
+    std::string getClientSurname() const;
     void getNumberOfClients() const;
     virtual void showGlobalWallet() const = 0;        // inne wyswietlane aktywa dla kazdego 
     virtual void showHistory() const;
