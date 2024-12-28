@@ -1,6 +1,5 @@
 #include "user.h"
 
-
 walletGoods client_Goods =
 {
     {"Cur_Dollar", 0.0},
@@ -22,11 +21,6 @@ walletGoods client_Goods =
     {"House_Warsaw", 0.0},
     {"House_Berlin", 0.0},
     {"House_Mexico_City", 0.0}
-};
-
-walletGoods client_Houses =
-{
-
 };
 
 enum State_deposit 
@@ -80,9 +74,6 @@ walletGoods course_assets =
     {"House_Berlin", 15000},
     {"House_Mexico_City", 2500}
 };
- 
-
-
 
 int UserAccount::client_Id = 0;
 
@@ -124,7 +115,7 @@ void UserAccount::showGlobalWallet() const
     }
 }
 
-void UserAccount::depositMoney(std::string& assetType, float& deposit_Amount)
+void UserAccount::depositMoney(std::string assetType, float deposit_Amount)
 {
     try
     {
@@ -288,6 +279,7 @@ void UserAccountSavings::withdrawMoney(walletGoods wallet)
 
 }
 
+
 // --------------------------------------------------------------------------------------------------------------------------------------------- //
 
 
@@ -420,6 +412,20 @@ void UserAccountInvest::generateReport() const
 
 //const auto& [category, values]
 void UserAccountInvest::showMyWallet() const
+{
+    for (const auto& [category, values] : client_Goods)
+    {
+        std::cout << category << " - " << values << std::endl;
+    }
+}
+void UserAccount::showMyWallet() const
+{
+    for (const auto& [category, values] : client_Goods)
+    {
+        std::cout << category << " - " << values << std::endl;
+    }
+}
+void UserAccountSavings::showMyWallet() const
 {
     for (const auto& [category, values] : client_Goods)
     {

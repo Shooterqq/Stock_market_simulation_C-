@@ -10,6 +10,9 @@
 #include <unordered_map>
 #include <array>
 #include <fstream>
+#include <list>
+#include <memory>
+#include <string>
 //#include <matplotlibcpp.h>        // later for charts
 
 float chooseMeters(void);
@@ -43,14 +46,14 @@ public:
     void getNumberOfClients() const;
     virtual void showGlobalWallet() const = 0;        // inne wyswietlane aktywa dla kazdego 
     virtual void showHistory() const;
-    virtual void depositMoney(std::string& assetType, float& deposit_Amount);
+    void depositMoney(std::string assetType, float deposit_Amount);
     virtual double calculateAccountWorth() const;
     virtual void generateReport() const = 0;
-
+    virtual void showMyWallet() const;
 protected:
     walletGoods client_Wallet_Money =
     {
-        {"Money", 0.0}
+        {"Money", 1000000.0}
     };
     int deposit_Bonus{ 100 };
 };
@@ -67,6 +70,7 @@ public:
     void buyDeposit(walletGoods wallet);       // kup lokate
     void buyGold(walletGoods wallet);          
     void withdrawMoney(walletGoods wallet);    
+    void showMyWallet() const;
 
 private:
     int deposit_Bonus{ 2 };
@@ -78,6 +82,7 @@ private:
 class UserAccountInvest : public UserAccount
 {
 public:
+    using UserAccount::UserAccount;
     void buyShares(walletGoods wallet);
     void buyHouses(walletGoods wallet);
     void showGlobalWallet() const;

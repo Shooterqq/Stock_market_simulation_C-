@@ -2,11 +2,13 @@
 #include <random>
 #include <chrono>
 #include <memory>
+#include <unordered_map>
 
 typedef enum
 {
     MENU,
     CREATE_ACCOUNT,
+    CHANGE_ACCOUNT,
     SHOW_ACCOUNTS,
     MANAGE_ACCOUNT,
     SHOW_HISTORY,
@@ -14,8 +16,6 @@ typedef enum
     EXIT
 }sm_main;
 
-
-void add(int a, int b);
 
 
 
