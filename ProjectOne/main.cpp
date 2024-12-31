@@ -2,32 +2,16 @@
 #include "user.h"
 #include "instrument.h"
 #include "game_menu.h"
-#include <iostream>
-#include <unordered_map>
-#include <string>
-#include <random>
-#include <algorithm>
-#include <unordered_map>
 
-void updateAssetPrices(walletGoods& marketPrices)
-{
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_real_distribution<> dist(-5.0, 5.0);
 
-	for (auto& asset : marketPrices)
-	{
-		asset.second += dist(gen);
-		asset.second = std::max(0.1f, asset.second); // Zapewniamy, że cena nie jest ujemna
-	}
-	std::cout << "Kursy aktywów zostały zaktualizowane.\n";
-}
+std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
+std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator = accountMap.begin();
+
 
 
 int main()
 {
-	std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
-	std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator = accountMap.begin();
+
 	bool gameRunning = true;
 	int turn { 0 };
 	sm_main sm_main_choose = MENU;
@@ -78,7 +62,8 @@ int main()
 				}
 				else
 				{
-					std::cout << "This account already exist: " << fullName << std::endl;
+					std::cout << "\n------------------------------------ ";
+					std::cout << "\nERROR - This account already exist: " << fullName << std::endl;
 				}
 			}
 			else if (account_type == 2)
@@ -97,14 +82,14 @@ int main()
 			{
 				std::cout << "Invalid value: " << account_type << std::endl;
 			}
-			// Sprawdzenie i dodanie konta
+			account_Iterator = accountMap.find(fullName);		// set iterator to actual created account
 			sm_main_choose = MENU;
 			break;
 		}
 
 		case CHANGE_ACCOUNT:
 		{
-			changeKnownAccount();
+			changeKnownAccount(account_Iterator);
 			sm_main_choose = MENU;
 			break;
 		}
@@ -236,7 +221,7 @@ int main()
 		case NEXT_TOUR:
 		{
 			accountMap;
-			//updateAssetPrices(course_assets);
+			updateAssetPrices(course_assets);
 			++turn;
 			sm_main_choose = MENU;
 			break;

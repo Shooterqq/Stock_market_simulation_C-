@@ -15,6 +15,15 @@
 #include <string>
 //#include <matplotlibcpp.h>        // later for charts
 
+
+typedef enum State_deposit
+{
+    IDLE,
+    DEPOSIT_AT_4,
+    DEPOSIT_AT_5,
+    DEPOSIT_AT_6
+};
+
 float chooseMeters(void);
 
 // --------------------------------------------------------------------------------------------------------------------------------------------- //
@@ -35,8 +44,6 @@ private:
     bool account_Activation_Status;
     walletHistory client_History;
 
-
-
 public:
     UserAccount();
     UserAccount(const std::string &name, const std::string &surname, float &usd_Start_Val);
@@ -50,6 +57,30 @@ public:
     virtual double calculateAccountWorth() const;
     virtual void generateReport() const = 0;
     virtual void showMyWallet() const;
+
+    walletGoods client_Goods =
+    {
+        {"Cur_Dollar", 0.0},
+        {"Cur_Euro", 0.0},
+        {"Cur_British Pound", 0.0},
+        {"St_Microsoft", 0.0},
+        {"St_Apple", 0.0},
+        {"St_Samsung", 0.0},
+        {"DepositAt4", 0.0},
+        {"DepositAt5", 0.0},
+        {"DepositAt6", 0.0},
+        {"Cry_Bitcoin", 0.0},
+        {"Cry_Etherium", 0.0},
+        {"Cry_Dogecoin", 0.0},
+        {"Bonds3Years", 0.0},
+        {"Bonds5Years", 0.0},
+        {"Bonds10Years", 0.0},
+        {"Gold", 0.0 },
+        {"House_Warsaw", 0.0},
+        {"House_Berlin", 0.0},
+        {"House_Mexico_City", 0.0}
+    };
+
 protected:
     walletGoods client_Wallet_Money =
     {

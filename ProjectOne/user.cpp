@@ -1,35 +1,5 @@
 #include "user.h"
 
-walletGoods client_Goods =
-{
-    {"Cur_Dollar", 0.0},
-    {"Cur_Euro", 0.0},
-    {"Cur_British Pound", 0.0},
-    {"St_Microsoft", 0.0},
-    {"St_Apple", 0.0},
-    {"St_Samsung", 0.0},
-    {"DepositAt4", 0.0},
-    {"DepositAt5", 0.0},
-    {"DepositAt6", 0.0},
-    {"Cry_Bitcoin", 0.0},
-    {"Cry_Etherium", 0.0},
-    {"Cry_Dogecoin", 0.0},
-    {"Bonds3Years", 0.0},
-    {"Bonds5Years", 0.0},
-    {"Bonds10Years", 0.0},
-    {"Gold", 0.0 },
-    {"House_Warsaw", 0.0},
-    {"House_Berlin", 0.0},
-    {"House_Mexico_City", 0.0}
-};
-
-enum State_deposit 
-{
-    IDLE,
-    DEPOSIT_AT_4,
-    DEPOSIT_AT_5,
-    DEPOSIT_AT_6
-};
 
 State_deposit deposit;
 
@@ -384,7 +354,6 @@ float chooseMeters(void)
     std::cin >> userInputMeters;
 
     return userInputMeters;
-
 }
 
 

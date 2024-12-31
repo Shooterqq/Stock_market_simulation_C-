@@ -3,7 +3,11 @@
 #include <chrono>
 #include <memory>
 #include <unordered_map>
-
+#include <iostream>
+#include <unordered_map>
+#include <string>
+#include <random>
+#include <algorithm>
 typedef enum
 {
     MENU,

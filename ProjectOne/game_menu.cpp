@@ -1,32 +1,48 @@
 #include "game_menu.h"
 #include "user.h"
-#include <unordered_map>
 
 extern std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
-extern std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator = accountMap.begin();
+extern std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator;
+
+
+void updateAssetPrices(walletGoods& marketPrices)
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dist(-5.0, 5.0);
+
+    for (auto& asset : marketPrices)
+    {
+        asset.second += dist(gen);
+        asset.second = std::max(0.1f, asset.second); // Zapewniamy, ¿e cena nie jest ujemna
+    }
+    std::cout << "Course of assets are changed.\n";
+}
 
 void displayMenu(void)
 {
-    std::cout << "1. Stwórz konto\n";
-    std::cout << "1. Zmieñ konto\n";
-    std::cout << "2. Wyœwietl stan kont\n";
-    std::cout << "3. Zarz¹dzaj kontem\n";
-    std::cout << "4. Poka¿ historiê kont\n";
-    std::cout << "5. Nastêpne konto\n";
-    std::cout << "6. WyjdŸ\n";
-    std::cout << "Wybierz opcjê: ";
+    std::cout << "1. Create account\n";
+    std::cout << "2. Change account\n";
+    std::cout << "3. Display wallet\n";
+    std::cout << "4. Manage account\n";
+    std::cout << "5. Show history\n";
+    std::cout << "6. Next turn\n";
+    std::cout << "7. Exit\n";
+    std::cout << "Enter option: ";
 }
 
 void displayActualAccount(void)
 {
     //std::cout << "Now plays: " << getClientName() << " " << getClientSurname() << "\n";
-    int a;
 }
-void changeKnownAccount(void)
+
+extern std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator;
+
+void changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator& account_Iterator)
 {
     std::string name, surname;
 
-    std::cout << "--Zmiana konta-- ";
+    std::cout << "--Zmiana konta--\n";
 
     std::cout << "Podaj imiê: ";
     std::cin >> name;
@@ -36,16 +52,20 @@ void changeKnownAccount(void)
 
     std::string fullName = name + " " + surname;
 
-    // Sprawdzenie i dodanie konta
-    if (accountMap.count(fullName) == 0)
+    auto it = accountMap.find(fullName);
+
+    if (it != accountMap.end()) 
     {
-        account_Iterator = accountMap.find(fullName);
+        account_Iterator = it;
+        std::cout << "Zmieniono na konto: " << fullName << "\n";
     }
-    else
+    else 
     {
         std::cout << "Nie znaleziono konta: " << fullName << "\n";
     }
 }
+
+
 
 void showSaveAccManageMenu(void)
 {
