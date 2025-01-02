@@ -11,9 +11,8 @@ std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_
 
 int main()
 {
-
 	bool gameRunning = true;
-	int turn { 0 };
+	static int turn { 0 };
 	sm_main sm_main_choose = MENU;
 
 	while (gameRunning) 
@@ -115,7 +114,7 @@ int main()
 					std::unordered_map<int, std::function<void()>> actions_Savings_Account =
 					{
 						{1, [&]() { savingsAccount->showGlobalWallet(); }},
-						{2, [&]() { savingsAccount->buyDeposit({ { "Money", 100 } }); }},
+						{2, [&]() { savingsAccount->buyDeposit(savingsAccount->client_Wallet_Money, turn); }},
 						{3, [&]() { savingsAccount->buyGold({ { "Money", 100 } }); }},
 						{4, [&]() { savingsAccount->calculateAccountWorth(); }},
 						{5, [&]() { savingsAccount->depositMoney("Money", 5.0f); }},
@@ -221,6 +220,7 @@ int main()
 		case NEXT_TOUR:
 		{
 			accountMap;
+			std::cout << "\n ---===### A month has passed ###===--- \n";
 			updateAssetPrices(course_assets);
 			++turn;
 			sm_main_choose = MENU;
@@ -274,7 +274,7 @@ int main()
 	UserAccountSavings account2; // Tworzenie instancji klasy
 
 	// Wywołanie funkcji z mapą utworzoną bezpośrednio w wywołaniu
-	account2.buyDeposit({ { "Money", 300.0 } });
+	//account2.buyDeposit({ { "Money", 300.0 } });
 
 
 	UserAccountInvest account3;

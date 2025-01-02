@@ -17,11 +17,16 @@
 #include <chrono>
 #include <memory>
 #include <algorithm>
+#include <limits>
+#include <cctype>
+#include <sstream>
 
 using assets = const std::map<std::string, std::vector<std::string>>;
 using walletInstruments = std::map<std::string, std::vector<float>>;
 using walletGoods = std::map<std::string, float>;
 using walletHistory = std::multimap<std::string, std::array<float, 2>>;
+
+//-----------------------------------------------------------------------------------------------------------------
 
 void updateAssetPrices(walletGoods& marketPrices);
 void displayMenu(void);
@@ -30,6 +35,34 @@ void changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAcco
 void showSaveAccManageMenu(void);
 void showInvestAccManageMenu(void);
 
+//----------------------------------------------------------------------------------------------------------------------------
+
+template <typename T>
+void isEnterValNum(T& enter_Num)
+{
+    while (true)
+    {
+        std::string input;
+        std::cin >> input;
+
+        // Sprawdzenie, czy ci¹g wejœciowy zawiera tylko cyfry (opcjonalnie dla liczb zmiennoprzecinkowych i ujemnych)
+        std::istringstream iss(input);
+        iss >> enter_Num;  // Próbujemy przekonwertowaæ wejœcie na typ T
+
+        if (iss.fail() || !iss.eof()) // Jeœli nie uda³o siê przekonwertowaæ lub pozosta³y nieprzeczytane znaki
+        {
+            std::cout << "It is not a number. Please put proper value.\n";
+
+            // Czyszczenie b³êdów i ignorowanie reszty danych w strumieniu
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+        else
+        {
+            break; // Wyjœcie z pêtli, gdy liczba jest poprawna
+        }
+    }
+}
 
 
 

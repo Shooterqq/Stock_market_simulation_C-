@@ -15,6 +15,12 @@
 #include <string>
 //#include <matplotlibcpp.h>        // later for charts
 
+typedef struct Deposit_options {
+    int startTurn;     // Tura, w której rozpoczêto lokatê
+    int duration;      // Czas trwania w turach
+    float amount;      // Kwota zdeponowana
+    float interestRate; // Stopa procentowa
+};
 
 typedef enum State_deposit
 {
@@ -23,6 +29,14 @@ typedef enum State_deposit
     DEPOSIT_AT_5,
     DEPOSIT_AT_6
 };
+
+//typedef enum State_deposit
+//{
+//    IDLE,
+//    DEPOSIT_AT_4,
+//    DEPOSIT_AT_5,
+//    DEPOSIT_AT_6
+//};                        // dodac nowe maszyny dla kazdej funkcji 
 
 float chooseMeters(void);
 
@@ -36,6 +50,7 @@ using walletHistory = std::multimap<std::string, std::array<float, 2>>;
 class UserAccount
 {
 private:
+    std::list<int> a;
     std::string client_Name;
     std::string client_Surname;
     static int client_Id;
@@ -45,6 +60,11 @@ private:
     walletHistory client_History;
 
 public:
+    walletGoods client_Wallet_Money =
+    {
+        {"Money", 1000000.0}
+    };
+
     UserAccount();
     UserAccount(const std::string &name, const std::string &surname, float &usd_Start_Val);
     ~UserAccount();
@@ -82,24 +102,30 @@ public:
     };
 
 protected:
-    walletGoods client_Wallet_Money =
-    {
-        {"Money", 1000000.0}
-    };
+
     int deposit_Bonus{ 100 };
 };
 
 // --------------------------------------------------------------------------------------------------------------------------------------------- //
 
+
+
 class UserAccountSavings : public UserAccount
 {
 public:
+    std::vector<Deposit_options> deposits; // Lista lokat
+
+    void addDeposit(int startTurn, int duration, float amount, float interestRate) 
+    {
+        deposits.push_back({ startTurn, duration, amount, interestRate });
+    }
+
     using UserAccount::UserAccount;
     void getSaveClientName() const;
     void generateReport() const override;
     void showGlobalWallet() const override;
-    void buyDeposit(walletGoods wallet);       // kup lokate
-    void buyGold(walletGoods wallet);          
+    void buyDeposit(walletGoods& wallet, static int& actual_turn_nr);      // kup lokate
+    void buyGold(walletGoods wallet);
     void withdrawMoney(walletGoods wallet);    
     void showMyWallet() const;
 

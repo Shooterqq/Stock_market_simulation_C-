@@ -8,6 +8,7 @@
 #include <string>
 #include <random>
 #include <algorithm>
+
 typedef enum
 {
     MENU,
