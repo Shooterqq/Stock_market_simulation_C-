@@ -2,6 +2,7 @@
 
 #include "user.h"
 
+#include <memory>
 #include <unordered_map>
 #include <string>
 #include <vector>
@@ -34,6 +35,8 @@ void displayActualAccount(void);
 void changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator& account_Iterator);
 void showSaveAccManageMenu(void);
 void showInvestAccManageMenu(void);
+void gameMenuRutine(void);
+void updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn);
 
 //----------------------------------------------------------------------------------------------------------------------------
 

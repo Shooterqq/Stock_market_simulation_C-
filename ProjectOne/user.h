@@ -113,14 +113,9 @@ protected:
 class UserAccountSavings : public UserAccount
 {
 public:
-    std::vector<Deposit_options> deposits; // Lista lokat
-
-    void addDeposit(int startTurn, int duration, float amount, float interestRate) 
-    {
-        deposits.push_back({ startTurn, duration, amount, interestRate });
-    }
-
     using UserAccount::UserAccount;
+
+    void updateDeposits(int currentTurn, float& client_Wallet_Money);
     void getSaveClientName() const;
     void generateReport() const override;
     void showGlobalWallet() const override;
@@ -128,8 +123,10 @@ public:
     void buyGold(walletGoods wallet);
     void withdrawMoney(walletGoods wallet);    
     void showMyWallet() const;
-
+    void addDeposit(int startTurn, int duration, float amount, float interestRate);
+    
 private:
+    std::vector<Deposit_options> saveAcc_Deposit_List;
     int deposit_Bonus{ 2 };
     int gold_Bonus{ 3 };
 };

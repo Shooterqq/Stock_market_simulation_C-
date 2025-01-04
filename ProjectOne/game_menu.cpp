@@ -110,10 +110,39 @@ void showInvestAccManageMenu(void)
     std::cout << "15. Exit" << std::endl;
 }
 
+void gameMenuRutine(void)
+{
+    1;
+}
 
 
 
+void updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn) 
+{
+    for (auto& [username, account] : accountMap) 
+    {
+        auto savingsAccount = std::dynamic_pointer_cast<UserAccountSavings>(account);
 
+        if (savingsAccount)
+        {
+            std::cout << "Updating deposits for savings account: " << username << "\n";
+            //  SprawdŸ, czy klucz "Money" istnieje
+            if (savingsAccount->client_Wallet_Money.find("Money") != savingsAccount->client_Wallet_Money.end())
+            {
+                // Pobierz referencjê do wartoœci
+                savingsAccount->updateDeposits(currentTurn, savingsAccount->client_Wallet_Money["Money"]);
+            }
+            else
+            {
+                std::cerr << "Key 'Money' not found in client_Wallet_Money map for account " << username << "\n";
+            }
+        }
+        else 
+        {
+            std::cout << "Account " << username << " has no deposits to update.\n";
+        }
+    }
+}
 
 
 

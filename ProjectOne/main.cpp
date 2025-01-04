@@ -15,8 +15,12 @@ int main()
 	static int turn { 0 };
 	sm_main sm_main_choose = MENU;
 
+	
+
 	while (gameRunning) 
 	{
+		updateAllDeposits(accountMap, turn);
+
 		switch (sm_main_choose)
 		{
 		case MENU:
