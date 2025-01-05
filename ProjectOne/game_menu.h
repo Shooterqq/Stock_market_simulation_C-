@@ -1,6 +1,7 @@
 #pragma once
 
-#include "user.h"
+#include "UserAccount.h"
+#include "UserAccountInvest.h"
 
 #include <memory>
 #include <unordered_map>
@@ -16,7 +17,6 @@
 #include <functional>
 #include <random>
 #include <chrono>
-#include <memory>
 #include <algorithm>
 #include <limits>
 #include <cctype>
@@ -29,14 +29,16 @@ using walletHistory = std::multimap<std::string, std::array<float, 2>>;
 
 //-----------------------------------------------------------------------------------------------------------------
 
-void updateAssetPrices(walletGoods& marketPrices);
-void displayMenu(void);
-void displayActualAccount(void);
-void changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator& account_Iterator);
-void showSaveAccManageMenu(void);
-void showInvestAccManageMenu(void);
-void gameMenuRutine(void);
-void updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn);
+void menu_updateAssetPrices(walletGoods& marketPrices);
+void menu_displayMenu(void);
+void menu_displayActualAccount(void);
+void menu_changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator& account_Iterator);
+void menu_showSaveAccManageMenu(void);
+void menu_showInvestAccManageMenu(void);
+void menu_gameMenuRutine(void);
+void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn);
+std::string menu_createAccount(void);
+void menu_manageAccount(static int turn);
 
 //----------------------------------------------------------------------------------------------------------------------------
 

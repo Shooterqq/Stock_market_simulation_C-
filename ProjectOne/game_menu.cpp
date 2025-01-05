@@ -1,11 +1,12 @@
 #include "game_menu.h"
-#include "user.h"
+#include "UserAccount.h"
+#include "UserAccountSavings.h"
 
-extern std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
-extern std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator;
+std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
+std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator = accountMap.begin();
 
 
-void updateAssetPrices(walletGoods& marketPrices)
+void menu_updateAssetPrices(walletGoods& marketPrices)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -19,7 +20,7 @@ void updateAssetPrices(walletGoods& marketPrices)
     std::cout << "Course of assets are changed.\n";
 }
 
-void displayMenu(void)
+void menu_displayMenu(void)
 {
     std::cout << "1. Create account\n";
     std::cout << "2. Change account\n";
@@ -27,18 +28,16 @@ void displayMenu(void)
     std::cout << "4. Manage account\n";
     std::cout << "5. Show history\n";
     std::cout << "6. Next turn\n";
-    std::cout << "7. Exit\n";
+    std::cout << "7. Exit\n\n";
     std::cout << "Enter option: ";
 }
 
-void displayActualAccount(void)
+void menu_displayActualAccount(void)
 {
     //std::cout << "Now plays: " << getClientName() << " " << getClientSurname() << "\n";
 }
 
-extern std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator;
-
-void changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator& account_Iterator)
+void menu_changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator& account_Iterator)
 {
     std::string name, surname;
 
@@ -67,7 +66,7 @@ void changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<UserAcco
 
 
 
-void showSaveAccManageMenu(void)
+void menu_showSaveAccManageMenu(void)
 {
     std::cout << "Type: Konto oszczêdnoœciowe." << std::endl;
 
@@ -88,7 +87,7 @@ void showSaveAccManageMenu(void)
     std::cout << "14. Exit" << std::endl;
 }
 
-void showInvestAccManageMenu(void)
+void menu_showInvestAccManageMenu(void)
 {
     std::cout << "Typ: Konto inwestycyjne." << std::endl;
 
@@ -110,14 +109,13 @@ void showInvestAccManageMenu(void)
     std::cout << "15. Exit" << std::endl;
 }
 
-void gameMenuRutine(void)
+void menu_gameMenuRutine(void)
 {
     1;
 }
 
 
-
-void updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn) 
+void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn)
 {
     for (auto& [username, account] : accountMap) 
     {
@@ -145,12 +143,163 @@ void updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccou
 }
 
 
+std::string menu_createAccount(void)
+{
+    std::string name, surname;
+    float initial_Deposit{ 0 };
+    int account_type{ 0 };
 
+    std::cout << "Please choose account type to create: \n";
+    std::cout << "1. Savings account \n";
+    std::cout << "2. Investition account \n";
+    std::cin >> account_type;
 
+    std::cout << "\nEnter your name: ";
+    std::cin >> name;
 
+    std::cout << "\nEnter your surname: ";
+    std::cin >> surname;
 
+    std::cout << "\nEnter initial deposit: ";
+    std::cin >> initial_Deposit;
 
+    std::string fullName = name + " " + surname;
 
+    if (account_type == 1)
+    {
+        if (accountMap.count(fullName) == 0)
+        {
+            accountMap[fullName] = std::make_shared<UserAccountSavings>(name, surname, initial_Deposit);
+            std::cout << "Added new account for: " << fullName << std::endl;
+        }
+        else
+        {
+            std::cout << "\n------------------------------------ ";
+            std::cout << "\nERROR - This account already exist: " << fullName << std::endl;
+        }
+    }
+    else if (account_type == 2)
+    {
+        if (accountMap.count(fullName) == 0)
+        {
+            accountMap[fullName] = std::make_shared<UserAccountInvest>(name, surname, initial_Deposit);
+            std::cout << "Dodano nowe konto dla: " << fullName << std::endl;
+        }
+        else
+        {
+            std::cout << "Konto ju¿ istnieje dla: " << fullName << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Invalid value: " << account_type << std::endl;
+    }
+    account_Iterator = accountMap.find(fullName);		// set iterator to actual created account
+
+    return fullName;
+}
+
+void menu_manageAccount(static int turn)
+{
+    if (account_Iterator != accountMap.end()) {  // Sprawdzenie, czy znaleziono konto
+
+        if (auto savingsAccount = std::dynamic_pointer_cast<UserAccountSavings>(account_Iterator->second))	// Dynamiczne rzutowanie na UserAccountSavings
+        {
+            int choosed_func = 0;
+
+            std::unordered_map<int, std::function<void()>> actions_Savings_Account =
+            {
+                {1, [&]() { savingsAccount->showGlobalWallet(); }},
+                {2, [&]() { savingsAccount->buyDeposit(savingsAccount->client_Wallet_Money, turn); }},
+                {3, [&]() { savingsAccount->buyGold({ { "Money", 100 } }); }},
+                {4, [&]() { savingsAccount->calculateAccountWorth(); }},
+                {5, [&]() { savingsAccount->depositMoney("Money", 5.0f); }},
+                {6, [&]() { savingsAccount->generateReport(); }},
+                {7, [&]() { savingsAccount->getClientName(); }},
+                {8, [&]() { savingsAccount->getClientSurname(); }},
+                {9, [&]() { savingsAccount->getNumberOfClients(); }},
+                {10, [&]() { savingsAccount->getSaveClientName(); }},
+                {11, [&]() { savingsAccount->showGlobalWallet(); }},
+                {12, [&]() { savingsAccount->withdrawMoney({ { "Money", 100 } }); }},
+                {13, [&]() { accountMap.erase(account_Iterator);
+                             std::cout << "Konto zosta³o usuniête." << std::endl; }},
+            };
+
+            menu_showSaveAccManageMenu();
+
+            std::cin >> choosed_func;
+
+            if (choosed_func == 14) {
+                std::cout << "Exiting program." << std::endl;
+                return;
+            }
+
+            auto action = actions_Savings_Account.find(choosed_func);
+
+            if (action != actions_Savings_Account.end())
+            {
+                action->second();  // Wywo³anie odpowiedniej funkcji
+            }
+            else
+            {
+                std::cout << "Invalid option. Please try again." << std::endl;
+            }
+        }
+
+        else if (auto investAccount = std::dynamic_pointer_cast<UserAccountInvest>(account_Iterator->second))	// Dynamiczne rzutowanie na UserAccountInvest
+        {
+            int choosed_func = 0;
+
+            std::unordered_map<int, std::function<void()>> actions_Invest_Account =
+            {
+                {1, [&]() { investAccount->buyCrypto({ { "Money", 100 } }); }},
+                {2, [&]() { investAccount->buyCurrencies({ { "Money", 100 } }); }},
+                {3, [&]() { investAccount->buyHouses({ { "Money", 100 } }); }},
+                {4, [&]() { investAccount->buyShares({ { "Money", 100 } }); }},
+                {5, [&]() { investAccount->calculateAccountWorth(); }},
+                {6, [&]() { investAccount->depositMoney("Money", 100); }},
+                {7, [&]() { investAccount->generateReport(); }},
+                {8, [&]() { investAccount->getClientName(); }},
+                {9, [&]() { investAccount->getClientSurname(); }},
+                {10, [&]() { investAccount->getNumberOfClients(); }},
+                {11, [&]() { investAccount->showGlobalWallet(); }},
+                {12, [&]() { investAccount->showHistory(); }},
+                {13, [&]() { investAccount->showMyWallet(); }},
+                {14, [&]() { accountMap.erase(account_Iterator);
+                             std::cout << "Konto zosta³o usuniête." << std::endl; }},
+            };
+
+            menu_showInvestAccManageMenu();
+
+            std::cin >> choosed_func;
+
+            if (choosed_func == 14)
+            {
+                std::cout << "Exiting program." << std::endl;
+                return;
+            }
+
+            auto action = actions_Invest_Account.find(choosed_func);
+            if (action != actions_Invest_Account.end())
+            {
+                action->second();  // Wywo³anie odpowiedniej funkcji
+            }
+            else
+            {
+                std::cout << "Invalid option. Please try again." << std::endl;
+            }
+
+        }
+        else
+        {
+            std::cout << "Nieznany typ konta." << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Konto o podanym imieniu i nazwisku nie istnieje!" << std::endl;
+    }
+}
 
 
 

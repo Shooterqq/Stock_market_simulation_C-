@@ -129,17 +129,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game_menu.cpp" />
-    <ClCompile Include="instrument.cpp" />
+    <ClCompile Include="Instrument.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="turn_time.cpp" />
-    <ClCompile Include="user.cpp" />
+    <ClCompile Include="UserAccount.cpp" />
+    <ClCompile Include="UserAccountInvest.cpp" />
+    <ClCompile Include="UserAccountSavings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_menu.h" />
-    <ClInclude Include="instrument.h" />
+    <ClInclude Include="Instrument.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="turn_time.h" />
-    <ClInclude Include="user.h" />
+    <ClInclude Include="UserAccount.h" />
+    <ClInclude Include="UserAccountInvest.h" />
+    <ClInclude Include="UserAccountSavings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
