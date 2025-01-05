@@ -28,16 +28,6 @@ typedef enum State_deposit
     DEPOSIT_AT_6
 };
 
-
-
-//typedef enum State_deposit
-//{
-//    IDLE,
-//    DEPOSIT_AT_4,
-//    DEPOSIT_AT_5,
-//    DEPOSIT_AT_6
-//};                        // dodac nowe maszyny dla kazdej funkcji 
-
 float chooseMeters(void);
 
 // --------------------------------------------------------------------------------------------------------------------------------------------- //
@@ -52,7 +42,6 @@ using walletHistory = std::multimap<std::string, std::array<float, 2>>;
 class UserAccount
 {
 private:
-    std::list<int> a;
     std::string client_Name;
     std::string client_Surname;
     static int client_Id;
@@ -62,11 +51,6 @@ private:
     walletHistory client_History;
 
 public:
-    walletGoods client_Wallet_Money =
-    {
-        {"Money", 1000000.0}
-    };
-
     UserAccount();
     UserAccount(const std::string &name, const std::string &surname, float &usd_Start_Val);
     ~UserAccount();
@@ -79,6 +63,16 @@ public:
     virtual double calculateAccountWorth() const;
     virtual void generateReport() const = 0;
     virtual void showMyWallet() const;
+
+
+
+protected:
+    int deposit_Bonus{ 100 };
+
+    walletGoods client_Wallet_Money =
+    {
+        {"Money", 1000000.0}
+    };
 
     walletGoods client_Goods =
     {
@@ -102,53 +96,6 @@ public:
         {"House_Berlin", 0.0},
         {"House_Mexico_City", 0.0}
     };
-
-protected:
-
-    int deposit_Bonus{ 100 };
 };
-
-// --------------------------------------------------------------------------------------------------------------------------------------------- //
-
-
-
-
-
-// --------------------------------------------------------------------------------------------------------------------------------------------- //
-
-
-
-// --------------------------------------------------------------------------------------------------------------------------------------------- //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

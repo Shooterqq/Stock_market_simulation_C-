@@ -125,15 +125,15 @@ void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<User
         {
             std::cout << "Updating deposits for savings account: " << username << "\n";
             //  SprawdŸ, czy klucz "Money" istnieje
-            if (savingsAccount->client_Wallet_Money.find("Money") != savingsAccount->client_Wallet_Money.end())
-            {
+            //if (savingsAccount->client_Wallet_Money.find("Money") != savingsAccount->client_Wallet_Money.end())
+            //{
                 // Pobierz referencjê do wartoœci
-                savingsAccount->updateDeposits(currentTurn, savingsAccount->client_Wallet_Money["Money"]);
-            }
-            else
-            {
-                std::cerr << "Key 'Money' not found in client_Wallet_Money map for account " << username << "\n";
-            }
+                savingsAccount->updateDeposits(currentTurn);
+            //}
+            //else
+            //{
+            //    std::cerr << "Key 'Money' not found in client_Wallet_Money map for account " << username << "\n";
+            //}
         }
         else 
         {
@@ -210,8 +210,8 @@ void menu_manageAccount(static int turn)
             std::unordered_map<int, std::function<void()>> actions_Savings_Account =
             {
                 {1, [&]() { savingsAccount->showGlobalWallet(); }},
-                {2, [&]() { savingsAccount->buyDeposit(savingsAccount->client_Wallet_Money, turn); }},
-                {3, [&]() { savingsAccount->buyGold({ { "Money", 100 } }); }},
+                {2, [&]() { savingsAccount->buyDeposit(turn); }},
+                {3, [&]() { savingsAccount->buyGold(); }},
                 {4, [&]() { savingsAccount->calculateAccountWorth(); }},
                 {5, [&]() { savingsAccount->depositMoney("Money", 5.0f); }},
                 {6, [&]() { savingsAccount->generateReport(); }},

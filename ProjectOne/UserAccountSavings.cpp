@@ -2,6 +2,14 @@
 
 extern State_deposit deposit;          // TODO usunac to i naprawic bledy, zrobic typedefy
 
+//typedef enum State_deposit
+//{
+//    IDLE,
+//    DEPOSIT_AT_4,
+//    DEPOSIT_AT_5,
+//    DEPOSIT_AT_6
+//};                        // dodac nowe maszyny dla kazdej funkcji 
+
 void UserAccountSavings::getSaveClientName() const
 {
     getClientName();
@@ -12,7 +20,7 @@ void UserAccountSavings::addDeposit(int startTurn, int duration, float amount, f
     saveAcc_Deposit_List.push_back({ startTurn, duration, amount, interestRate });
 }
 
-void UserAccountSavings::updateDeposits(int currentTurn, float& client_Wallet_Money)
+void UserAccountSavings::updateDeposits(int currentTurn)
 {
     for (auto it = saveAcc_Deposit_List.begin(); it != saveAcc_Deposit_List.end(); )
     {
@@ -21,7 +29,7 @@ void UserAccountSavings::updateDeposits(int currentTurn, float& client_Wallet_Mo
             // 1 because we have to take into account the initial value
             // devide by 100 for make percentage investing rate 
             float maturedAmount = it->amount * (1 + it->interestRate / 100.0f);
-            client_Wallet_Money += maturedAmount;       // add interest to deposit
+            this->client_Wallet_Money["Money"] += maturedAmount;       // add interest to deposit
             std::cout << "Deposit matured! Returned " << maturedAmount << " to the account.\n";
 
             if (it->interestRate == DEPOSIT_INVEST_RATE_4)
@@ -73,13 +81,13 @@ void UserAccountSavings::generateReport() const     // TODO
     std::cout << "123\n";
 }
 
-void UserAccountSavings::buyDeposit(walletGoods& wallet, static int& actual_Turn_Nr)
+void UserAccountSavings::buyDeposit(static int& actual_Turn_Nr)
 {
     State_deposit deposit{ IDLE };
     float user_Input_Deposit;
     std::string key = "Money";
 
-    std::cout << "Your have " << client_Wallet_Money[key] << " money on your account.\n";
+    std::cout << "Your have " << this->client_Wallet_Money[key] << " money on your account.\n";
     std::cout << "Enter how much you want to deposit: \n";
 
     isEnterValNum(user_Input_Deposit);
@@ -138,16 +146,22 @@ void UserAccountSavings::buyDeposit(walletGoods& wallet, static int& actual_Turn
     } while (deposit_Run);
 }
 
-void UserAccountSavings::buyGold(walletGoods wallet)
+void UserAccountSavings::buyGold(void)
 {
     std::string key = "Money";
 
-    if (client_Wallet_Money[key] > wallet[key])
+    std::cout << "You have " << client_Wallet_Money[key] << " money." << std::endl;
+    std::cout << "Enter how much money you want to spend on buying gold: " << std::endl;
+
+    int gold_amount{ 0 };
+    isEnterValNum(gold_amount);
+
+    if (client_Wallet_Money[key] < gold_amount)
     {
-        std::cout << "You have too low money in your wallet" << std::endl;
+        std::cout << "You enter too low value." << std::endl;
         return;
     }
-    client_Goods["Gold"] = { wallet[key] * (1 / course_assets["Gold"]) };
+    client_Goods["Gold"] = { gold_amount * (1 / course_assets["Gold"]) };
     std::cout << "Gold purchased. Excellent choice." << std::endl;
 }
 
@@ -163,7 +177,6 @@ void UserAccountSavings::withdrawMoney(walletGoods wallet)
 
     client_Wallet_Money[key] -= wallet[key];
     std::cout << "Money withdrawed. Your actual account state is: " << client_Wallet_Money[key] << std::endl;
-
 }
 
 void UserAccountSavings::showMyWallet() const

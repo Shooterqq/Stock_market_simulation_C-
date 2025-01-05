@@ -22,4 +22,5 @@ public:
 private:
     int shares_Bonus{ 4 };
     int crypto_Bonus{ 2 };
+
 };

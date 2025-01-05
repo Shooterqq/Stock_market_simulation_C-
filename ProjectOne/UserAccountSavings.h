@@ -24,13 +24,12 @@ class UserAccountSavings : public UserAccount
 {
 public:
     using UserAccount::UserAccount;
-
-    void updateDeposits(int currentTurn, float& client_Wallet_Money);
+    void updateDeposits(int currentTurn);
     void getSaveClientName() const;
     void generateReport() const override;
     void showGlobalWallet() const override;
-    void buyDeposit(walletGoods& wallet, static int& actual_turn_nr);      // kup lokate
-    void buyGold(walletGoods wallet);
+    void buyDeposit(static int& actual_turn_nr);      // kup lokate
+    void buyGold(void);
     void withdrawMoney(walletGoods wallet);
     void showMyWallet() const;
     void addDeposit(int startTurn, int duration, float amount, float interestRate);
@@ -39,5 +38,6 @@ private:
     std::vector<Deposit_options> saveAcc_Deposit_List;
     int deposit_Bonus{ 2 };
     int gold_Bonus{ 3 };
+
 };
 
