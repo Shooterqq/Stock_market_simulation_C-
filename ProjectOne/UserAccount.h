@@ -13,20 +13,7 @@
 #include <memory>
 //#include <matplotlibcpp.h>        // later for charts
 
-typedef struct Deposit_options {
-    int startTurn;     // Tura, w której rozpoczêto lokatê
-    int duration;      // Czas trwania w turach
-    float amount;      // Kwota zdeponowana
-    float interestRate; // Stopa procentowa
-};
 
-typedef enum State_deposit
-{
-    IDLE,
-    DEPOSIT_AT_4,
-    DEPOSIT_AT_5,
-    DEPOSIT_AT_6
-};
 
 float chooseMeters(void);
 
@@ -63,8 +50,7 @@ public:
     virtual double calculateAccountWorth() const;
     virtual void generateReport() const = 0;
     virtual void showMyWallet() const;
-
-
+    void sellAsset(void);
 
 protected:
     int deposit_Bonus{ 100 };

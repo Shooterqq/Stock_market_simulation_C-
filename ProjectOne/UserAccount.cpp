@@ -1,9 +1,6 @@
 #include "UserAccount.h"
 #include "game_menu.h"
 
-
-State_deposit deposit{ IDLE };          // TODO usunac to i naprawic bledy, zrobic typedefy
-
 const assets typeOfAssets =
 {
     {"Currencies", {"Dollar", "Euro", "British Pound"}},
@@ -110,7 +107,7 @@ void UserAccount::showGlobalWallet() const
     }
 }
 
-void UserAccount::depositMoney(std::string assetType, float deposit_Amount)
+void UserAccount::depositMoney(std::string assetType, float deposit_Amount)     // TODO
 {
     try
     {
@@ -152,5 +149,33 @@ void UserAccount::showHistory() const
             << ", Deposit Amount: " << values.at(1)
             << '\n';
     }
+}
+
+void UserAccount::sellAsset()
+{
+    std::cout << "\nYou have " << client_Wallet_Money[WALLET_KEY] << " money.\n" << std::endl;
+
+    showMyWallet();
+
+    std::cout << "\nEnter type of asset to sell: " << std::endl;
+    std::string asset_type;
+    std::cin >> asset_type;
+
+    std::cout << "\nEnter how much do you want to sell: " << std::endl;
+
+    int asset_amount{ 0 };
+    isEnterValNum(asset_amount);
+
+    if (client_Goods[asset_type] < asset_amount)
+    {
+        std::cout << "\nYou enter too high value. You don't have that much amount of this asset.\n" << std::endl;
+        return;
+    }
+
+    client_Goods[asset_type] -= asset_amount;
+    client_Wallet_Money[WALLET_KEY] += asset_amount * ((course_assets[asset_type] * 90/100));
+
+    std::cout << "\nAsset sold.After this operation you have: " << client_Goods[asset_type] << client_Goods[asset_type] <<std::endl;
+    std::cout << "\nYou have " << client_Wallet_Money[WALLET_KEY] << " money.\n" << std::endl;
 }
 

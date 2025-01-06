@@ -208,7 +208,8 @@ void menu_manageAccount(static int turn)
             int choosed_func = 0;
 
             std::unordered_map<int, std::function<void()>> actions_Savings_Account =
-            {
+            { 
+                {0, [&]() { savingsAccount->sellAsset(); }},
                 {1, [&]() { savingsAccount->showGlobalWallet(); }},
                 {2, [&]() { savingsAccount->buyDeposit(turn); }},
                 {3, [&]() { savingsAccount->buyGold(); }},
@@ -220,8 +221,9 @@ void menu_manageAccount(static int turn)
                 {9, [&]() { savingsAccount->getNumberOfClients(); }},
                 {10, [&]() { savingsAccount->getSaveClientName(); }},
                 {11, [&]() { savingsAccount->showGlobalWallet(); }},
-                {12, [&]() { savingsAccount->withdrawMoney({ { "Money", 100 } }); }},
-                {13, [&]() { accountMap.erase(account_Iterator);
+                {12, [&]() { savingsAccount->withdrawMoney(); }},
+                {13, [&]() { savingsAccount->~UserAccountSavings();
+                             accountMap.erase(account_Iterator);
                              std::cout << "Konto zosta³o usuniête." << std::endl; }},
             };
 
@@ -252,10 +254,10 @@ void menu_manageAccount(static int turn)
 
             std::unordered_map<int, std::function<void()>> actions_Invest_Account =
             {
-                {1, [&]() { investAccount->buyCrypto({ { "Money", 100 } }); }},
-                {2, [&]() { investAccount->buyCurrencies({ { "Money", 100 } }); }},
-                {3, [&]() { investAccount->buyHouses({ { "Money", 100 } }); }},
-                {4, [&]() { investAccount->buyShares({ { "Money", 100 } }); }},
+                {1, [&]() { investAccount->buyCrypto(); }},
+                {2, [&]() { investAccount->buyCurrencies(); }},
+                {3, [&]() { investAccount->buyHouses(); }},
+                {4, [&]() { investAccount->buyShares(); }},
                 {5, [&]() { investAccount->calculateAccountWorth(); }},
                 {6, [&]() { investAccount->depositMoney("Money", 100); }},
                 {7, [&]() { investAccount->generateReport(); }},
@@ -265,7 +267,8 @@ void menu_manageAccount(static int turn)
                 {11, [&]() { investAccount->showGlobalWallet(); }},
                 {12, [&]() { investAccount->showHistory(); }},
                 {13, [&]() { investAccount->showMyWallet(); }},
-                {14, [&]() { accountMap.erase(account_Iterator);
+                {14, [&]() { investAccount->~UserAccountInvest(); 
+                             accountMap.erase(account_Iterator);
                              std::cout << "Konto zosta³o usuniête." << std::endl; }},
             };
 

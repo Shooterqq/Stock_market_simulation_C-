@@ -7,14 +7,28 @@ extern const assets typeOfAssets;
 extern walletInstruments valueOfAssets;
 extern walletGoods course_assets;
 
+typedef struct Deposit_options {
+    int startTurn;     // Tura, w której rozpoczêto lokatê
+    int duration;      // Czas trwania w turach
+    float amount;      // Kwota zdeponowana
+    float interestRate; // Stopa procentowa
+};
 
-constexpr int DEPOSIT_INVEST_RATE_4{ 4 };      // float but int is better - less memory
-constexpr int DEPOSIT_INVEST_RATE_5{ 5 };
-constexpr int DEPOSIT_INVEST_RATE_6{ 6 };
+typedef enum State_deposit
+{
+    SM_DEP_IDLE,
+    SM_DEP_DEPOSIT_AT_4,
+    SM_DEP_DEPOSIT_AT_5,
+    SM_DEP_DEPOSIT_AT_6
+};
 
-constexpr int DEPOSIT_MONTHS_6{ 6 };
-constexpr int DEPOSIT_MONTHS_9{ 9 };
-constexpr int DEPOSIT_MONTHS_12{ 12 };
+constexpr int DEPOSIT_INVEST_RATE_4 { 4 };      // float but int is better - less memory
+constexpr int DEPOSIT_INVEST_RATE_5 { 5 };
+constexpr int DEPOSIT_INVEST_RATE_6 { 6 };
+
+constexpr int DEPOSIT_MONTHS_6 { 6 };
+constexpr int DEPOSIT_MONTHS_9 { 9 };
+constexpr int DEPOSIT_MONTHS_12 { 12 };
 
 constexpr const char* DDEPOSIT_AT_4 = "DepositAt4";
 constexpr const char* DDEPOSIT_AT_5 = "DepositAt5";
@@ -30,7 +44,7 @@ public:
     void showGlobalWallet() const override;
     void buyDeposit(static int& actual_turn_nr);      // kup lokate
     void buyGold(void);
-    void withdrawMoney(walletGoods wallet);
+    void withdrawMoney(void);
     void showMyWallet() const;
     void addDeposit(int startTurn, int duration, float amount, float interestRate);
 

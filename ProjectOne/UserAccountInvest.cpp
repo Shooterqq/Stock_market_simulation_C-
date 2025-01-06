@@ -1,97 +1,125 @@
 #include "UserAccountInvest.h"
 
-extern State_deposit deposit;          // TODO usunac to i naprawic bledy, zrobic typedefy
-
-void UserAccountInvest::buyShares(walletGoods wallet)
+void UserAccountInvest::buyShares()
 {
-    std::string key = "Money";
+    State_shares shares = SM_ST_IDLE;
+    float user_Input_Deposit;
 
-    if (client_Wallet_Money[key] > wallet[key])
+    std::cout << "Your have " << client_Wallet_Money[WALLET_KEY] << " money on your account.\n";
+    std::cout << "Enter how much you want to deposit: \n";
+
+    isEnterValNum(user_Input_Deposit);
+
+    if (client_Wallet_Money[WALLET_KEY] < user_Input_Deposit)
     {
-        std::cout << "You have too low money in your wallet" << std::endl;
+        std::cout << "You enter too high amount of money." << std::endl;
         return;
     }
-    std::cout << "Please choose type of stocks:" << std::endl;
-    std::cout << "1. Microsoft" << std::endl;
-    std::cout << "2. Apple" << std::endl;
-    std::cout << "3. Samsung" << std::endl;
 
-    int userInput;
-    std::cin >> userInput;
-    deposit = static_cast<State_deposit>(userInput);
+    int userInput {0};
+    bool shares_Run{ true };
 
-    switch (deposit)
-    {
-    case DEPOSIT_AT_4:
-        std::cout << "Chosed St_Microsoft" << std::endl;
-        client_Goods["St_Microsoft"] = { wallet[key] * (1 / course_assets["St_Microsoft"]) };
-        break;
+    do {
+        switch (shares)
+        {
+        case SM_ST_IDLE:
+            std::cout << "Please choose type of stocks to purchase:" << std::endl;
+            std::cout << "1. Microsoft" << std::endl;
+            std::cout << "2. Apple" << std::endl;
+            std::cout << "3. Samsung" << std::endl;
 
-    case DEPOSIT_AT_5:
-        std::cout << "Chosed St_Apple" << std::endl;
-        client_Goods["St_Apple"] = { wallet[key] * (1 / course_assets["St_Apple"]) };
-        break;
+            isEnterValNum(userInput);
+            shares = static_cast<State_shares>(userInput);
+            break;
 
-    case DEPOSIT_AT_6:
-        std::cout << "Chosed St_Samsung" << std::endl;
-        client_Goods["St_Samsung"] = { wallet[key] * (1 / course_assets["St_Samsung"]) };
-        break;
+        case SM_ST_MICROSOFT:
+            std::cout << "Chosed St_Microsoft" << std::endl;
+            client_Goods[ST_MICROSOFT] = { user_Input_Deposit * (1 / course_assets[ST_MICROSOFT]) };
+            shares_Run = false;
+            break;
 
-    default:
-        std::cout << "Invalid choice. Please choose a proper value." << std::endl;
-        deposit = IDLE; // Reset to IDLE if input is invalid
-        break;
-    }
+        case SM_ST_APPLE:
+            std::cout << "Chosed St_Apple" << std::endl;
+            client_Goods[ST_APPLE] = { user_Input_Deposit * (1 / course_assets[ST_APPLE]) };
+            shares_Run = false;
+            break;
+
+        case SM_ST_SAMSUNG:
+            std::cout << "Chosed St_Samsung" << std::endl;
+            client_Goods[ST_SAMSUNG] = { user_Input_Deposit * (1 / course_assets[ST_SAMSUNG]) };
+            shares_Run = false;
+            break;
+
+        default:
+            std::cout << "Invalid choice. Please choose a proper value." << std::endl;
+            shares = SM_ST_IDLE; // Reset to IDLE if input is invalid
+            break;
+        }
+    } while (shares_Run);
 }
 
-void UserAccountInvest::buyHouses(walletGoods wallet)
+void UserAccountInvest::buyHouses()
 {
-    std::string key = "Money";
+    State_houses houses = SM_DEV_IDLE;
+    float user_Input_Deposit { 0 };
 
-    if (client_Wallet_Money[key] > wallet[key])
+    std::cout << "Your have " << this->client_Wallet_Money[WALLET_KEY] << " money on your account.\n";
+    std::cout << "Enter how much you want to deposit: \n";
+
+    isEnterValNum(user_Input_Deposit);
+
+    if (client_Wallet_Money[WALLET_KEY] < user_Input_Deposit)
     {
-        std::cout << "You have too low money in your wallet" << std::endl;
+        std::cout << "You enter too high amount of money." << std::endl;
         return;
     }
 
     int userInputCity;
-    float userMeters;
+    bool houses_Run{ true };
 
-    switch (deposit)
-    {
-    case IDLE:
-        std::cout << "Please choose city, where you want to buy house:" << std::endl;
-        std::cout << "1. Warsaw" << std::endl;
-        std::cout << "2. Berlin" << std::endl;
-        std::cout << "3. Mexico City" << std::endl;
+    do {
+        switch (houses)
+        {
+        case SM_DEV_IDLE:
+            std::cout << "Please choose city, where you want to buy house:" << std::endl;
+            std::cout << "1. Warsaw" << std::endl;
+            std::cout << "2. Berlin" << std::endl;
+            std::cout << "3. Mexico City" << std::endl;
 
-        std::cin >> userInputCity;
-        deposit = static_cast<State_deposit>(userInputCity);
-        break;
+            std::cin >> userInputCity;
+            houses = static_cast<State_houses>(userInputCity);
+            break;
 
-    case DEPOSIT_AT_4:
-        std::cout << "Chosed Warsaw - grey, dark and cold piece of hell" << std::endl;
-        //userMeters = chooseMeters();
-        client_Goods["House_Warsaw"] = { wallet[key] / course_assets["House_Warsaw"] };
-        break;
+        case SM_DEV_HOUSE_WARSAW:
+            std::cout << "Chosed Warsaw - grey, dark and cold piece of hell" << std::endl;
+            //userMeters = chooseMeters();
+            client_Goods[DEV_HS_WARSAW] += user_Input_Deposit / course_assets[DEV_HS_WARSAW];
+            client_Wallet_Money[WALLET_KEY] -= user_Input_Deposit;
+            houses_Run = false;
+            break;
 
-    case DEPOSIT_AT_5:
-        std::cout << "Chosed House_Berlin" << std::endl;
-        //userMeters = chooseMeters();
-        client_Goods["House_Berlin"] = { wallet[key] / course_assets["House_Berlin"] };
-        break;
+        case SM_DEV_HOUSE_BERLIN:
+            std::cout << "Chosed House_Berlin" << std::endl;
+            //userMeters = chooseMeters();
+            client_Goods[DEV_HS_BERLIN] +=  user_Input_Deposit / course_assets[DEV_HS_BERLIN] ;
+            client_Wallet_Money[WALLET_KEY] -= user_Input_Deposit;
+            houses_Run = false;
+            break;
 
-    case DEPOSIT_AT_6:
-        std::cout << "Chosed House_Mexico_City" << std::endl;
-        //userMeters = chooseMeters();
-        client_Goods["House_Mexico_City"] = { wallet[key] / course_assets["House_Mexico_City"] };
-        break;
+        case SM_DEV_HOUSE_MEXICO_CITY:
+            std::cout << "Chosed House_Mexico_City" << std::endl;
+            //userMeters = chooseMeters();
+            client_Goods[DEV_HS_MEXICO_CITY] += user_Input_Deposit / course_assets[DEV_HS_MEXICO_CITY];
+            client_Wallet_Money[WALLET_KEY] -= user_Input_Deposit;
+            houses_Run = false;
+            break;
 
-    default:
-        std::cout << "Invalid choice. Please choose a proper value." << std::endl;
-        deposit = IDLE; // Reset to IDLE if input is invalid
-        break;
-    }
+        default:
+            std::cout << "Invalid choice. Please choose a proper value." << std::endl;
+            houses = SM_DEV_IDLE; // Reset to IDLE if input is invalid
+            break;
+        }
+    } while (houses_Run);
 }
 
 float chooseMeters(void)
@@ -127,7 +155,6 @@ void UserAccountInvest::generateReport() const
     std::cout << "123";
 }
 
-//const auto& [category, values]
 void UserAccountInvest::showMyWallet() const
 {
     std::cout << "\nAccount: " << this->getClientName() << " " << this->getClientSurname() << "\n";
@@ -138,99 +165,123 @@ void UserAccountInvest::showMyWallet() const
     std::cout << "\n";
 }
 
-//{ "Cur_Dollar", 3.40 },
-//{ "Cur_Euro", 4.25 },
-//{ "Cur_British Pound", 5.20 },
-void UserAccountInvest::buyCurrencies(walletGoods wallet)
+void UserAccountInvest::buyCurrencies()
 {
-    std::string key = "Money";
+    State_currenties currenties = SM_CUR_IDLE;
+    float in_Val_Of_Currienties {0};
 
-    if (client_Wallet_Money[key] > wallet[key])
+    std::cout << "Your have " << client_Wallet_Money[WALLET_KEY] << " money on your account.\n";
+    std::cout << "Enter how much you want to deposit: \n";
+
+    isEnterValNum(in_Val_Of_Currienties);
+
+    if (client_Wallet_Money[WALLET_KEY] < in_Val_Of_Currienties)
     {
-        std::cout << "You have too low money in your wallet" << std::endl;
+        std::cout << "You enter too high amount of money." << std::endl;
         return;
     }
+    int cur_Chose_Option {0};
+    bool currenties_Run {true};
 
-    int userInputCurrienties;
-    float userMeters;
+	do {
+		switch (currenties)
+		{
+		case SM_CUR_IDLE:
+			std::cout << "Please choose currienties to buy:" << std::endl;
+			std::cout << "1. Dollar" << std::endl;
+			std::cout << "2. Euro" << std::endl;
+			std::cout << "3. British Pound" << std::endl;
 
-    switch (deposit)
-    {
-    case IDLE:
-        std::cout << "Please choose currienties to buy:" << std::endl;
-        std::cout << "1. Dollar" << std::endl;
-        std::cout << "2. Euro" << std::endl;
-        std::cout << "3. British Pound" << std::endl;
+			isEnterValNum(cur_Chose_Option);
+			currenties = static_cast<State_currenties>(cur_Chose_Option);
+			break;
 
-        std::cin >> userInputCurrienties;
-        deposit = static_cast<State_deposit>(userInputCurrienties);
-        break;
+		case SM_CUR_DOLLAR:
+			std::cout << "Chosed Dollar" << std::endl;
+			client_Goods[CUR_DOLLAR] += in_Val_Of_Currienties / course_assets[CUR_DOLLAR];
+            client_Wallet_Money[WALLET_KEY] -= in_Val_Of_Currienties;
+            currenties_Run = false;
+			break;
 
-    case DEPOSIT_AT_4:
-        std::cout << "Chosed Dollar" << std::endl;
-        client_Goods["Cur_Dollar"] = { wallet[key] / course_assets["Cur_Dollar"] };
+		case SM_CUR_EURO:
+			std::cout << "Chosed Euro" << std::endl;
+			client_Goods[CUR_EURO] += in_Val_Of_Currienties / course_assets[CUR_EURO];
+            client_Wallet_Money[WALLET_KEY] -= in_Val_Of_Currienties;
+            currenties_Run = false;
+			break;
 
-        break;
+		case SM_CUR_BRITISH_POUND:
+			std::cout << "Chosed British Pound" << std::endl;
+			client_Goods[CUR_BRITISH_POUND] += in_Val_Of_Currienties / course_assets[CUR_BRITISH_POUND];
+            client_Wallet_Money[WALLET_KEY] -= in_Val_Of_Currienties;
+            currenties_Run = false;
+			break;
 
-    case DEPOSIT_AT_5:
-        std::cout << "Chosed Euro" << std::endl;
-        client_Goods["Cur_Euro"] = { wallet[key] / course_assets["Cur_Euro"] };
-        break;
-
-    case DEPOSIT_AT_6:
-        std::cout << "Chosed British Pound" << std::endl;
-        client_Goods["Cur_British_Pound"] = { wallet[key] / course_assets["Cur_British_Pound"] };
-        break;
-
-    default:
-        std::cout << "Invalid choice. Please choose a proper value." << std::endl;
-        deposit = IDLE; // Reset to IDLE if input is invalid
-        break;
-    }
+		default:
+			std::cout << "Invalid choice. Please choose a proper value." << std::endl;
+			currenties = SM_CUR_IDLE;
+			break;
+		}
+	} while (currenties_Run);
 }
 
-void UserAccountInvest::buyCrypto(walletGoods wallet)
+void UserAccountInvest::buyCrypto()
 {
-    std::string key = "Money";
+    State_crypto crypto = SM_CR_IDLE;
+    float in_Val_Of_Crypto { 0 };
 
-    if (client_Wallet_Money[key] > wallet[key])
+    std::cout << "Your have " << client_Wallet_Money[WALLET_KEY] << " money on your account.\n";
+    std::cout << "Enter how much you want to deposit: \n";
+
+    isEnterValNum(in_Val_Of_Crypto);
+
+    if (client_Wallet_Money[WALLET_KEY] < in_Val_Of_Crypto)
     {
-        std::cout << "You have too low money in your wallet" << std::endl;
+        std::cout << "You enter too high amount of money." << std::endl;
         return;
     }
 
-    int userInputCurypto;
+    int userInputCurypto {0};
+    bool crypto_Run {true};
 
-    switch (deposit)
-    {
-    case IDLE:
-        std::cout << "Please choose crypto to buy:" << std::endl;
-        std::cout << "1. Bitcoin" << std::endl;
-        std::cout << "2. Etherium" << std::endl;
-        std::cout << "3. Dogecoin" << std::endl;
+    do {
+        switch (crypto)
+        {
+        case SM_CR_IDLE:
+            std::cout << "Please choose crypto to buy:" << std::endl;
+            std::cout << "1. Bitcoin" << std::endl;
+            std::cout << "2. Etherium" << std::endl;
+            std::cout << "3. Dogecoin" << std::endl;
 
-        std::cin >> userInputCurypto;
-        deposit = static_cast<State_deposit>(userInputCurypto);
-        break;
+            std::cin >> userInputCurypto;
+            crypto = static_cast<State_crypto>(userInputCurypto);
+            break;
 
-    case DEPOSIT_AT_4:
-        std::cout << "Chosed Bitcoin" << std::endl;
-        client_Goods["Cry_Bitcoin"] = { wallet[key] / course_assets["Cry_Bitcoin"] };
-        break;
+        case SM_CR_BITCOIN:
+            std::cout << "Chosed Bitcoin" << std::endl;
+            client_Goods[CRY_BITCOIN] += in_Val_Of_Crypto / course_assets[CRY_BITCOIN];
+            client_Wallet_Money[WALLET_KEY] -= in_Val_Of_Crypto;
+            crypto_Run = false;
+            break;
 
-    case DEPOSIT_AT_5:
-        std::cout << "Chosed Etherium" << std::endl;
-        client_Goods["Cry_Etherium"] = { wallet[key] / course_assets["Cry_Etherium"] };
-        break;
+        case SM_CR_ETHERIUM:
+            std::cout << "Chosed Etherium" << std::endl;
+            client_Goods[CRY_ETHERIUM] += in_Val_Of_Crypto / course_assets[CRY_ETHERIUM];
+            client_Wallet_Money[WALLET_KEY] -= in_Val_Of_Crypto;
+            crypto_Run = false;
+            break;
 
-    case DEPOSIT_AT_6:
-        std::cout << "Chosed Dogecoin" << std::endl;
-        client_Goods["Cry_Dogecoin"] = { wallet[key] / course_assets["Cry_Dogecoin"] };
-        break;
+        case SM_CR_DOGECOIN:
+            std::cout << "Chosed Dogecoin" << std::endl;
+            client_Goods[CRY_DOGECOIN] += in_Val_Of_Crypto / course_assets[CRY_DOGECOIN];
+            client_Wallet_Money[WALLET_KEY] -= in_Val_Of_Crypto;
+            crypto_Run = false;
+            break;
 
-    default:
-        std::cout << "Invalid choice. Please choose a proper value." << std::endl;
-        deposit = IDLE; // Reset to IDLE if input is invalid
-        break;
-    }
+        default:
+            std::cout << "Invalid choice. Please choose a proper value." << std::endl;
+            crypto = SM_CR_IDLE;
+            break;
+        }
+    } while(crypto_Run);
 }

@@ -1,15 +1,5 @@
 #include "UserAccountSavings.h"
 
-extern State_deposit deposit;          // TODO usunac to i naprawic bledy, zrobic typedefy
-
-//typedef enum State_deposit
-//{
-//    IDLE,
-//    DEPOSIT_AT_4,
-//    DEPOSIT_AT_5,
-//    DEPOSIT_AT_6
-//};                        // dodac nowe maszyny dla kazdej funkcji 
-
 void UserAccountSavings::getSaveClientName() const
 {
     getClientName();
@@ -76,25 +66,24 @@ void UserAccountSavings::showGlobalWallet() const
     }
 }
 
-void UserAccountSavings::generateReport() const     // TODO
+void UserAccountSavings::generateReport() const     // TODO kiedys
 {
-    std::cout << "123\n";
+    std::cout << "Not yet programmed :( \n";
 }
 
 void UserAccountSavings::buyDeposit(static int& actual_Turn_Nr)
 {
-    State_deposit deposit{ IDLE };
-    float user_Input_Deposit;
-    std::string key = "Money";
+    State_deposit deposit{ SM_DEP_IDLE };
+    float user_Input_Deposit{ 0 };
 
-    std::cout << "Your have " << this->client_Wallet_Money[key] << " money on your account.\n";
+    std::cout << "Your have " << this->client_Wallet_Money[WALLET_KEY] << " money on your account.\n";
     std::cout << "Enter how much you want to deposit: \n";
 
     isEnterValNum(user_Input_Deposit);
 
-    if (client_Wallet_Money[key] < user_Input_Deposit)
+    if (client_Wallet_Money[WALLET_KEY] < user_Input_Deposit)
     {
-        std::cout << "You enter too low amount of money" << std::endl;
+        std::cout << "You enter too high amount of money." << std::endl;
         return;
     }
 
@@ -104,43 +93,43 @@ void UserAccountSavings::buyDeposit(static int& actual_Turn_Nr)
     do {
         switch (deposit)
         {
-        case IDLE:
+        case SM_DEP_IDLE:
             std::cout << "Please choose the period and interest rate of your deposit:" << std::endl;
             std::cout << "1. Deposit for 6 months with 4% interest rate" << std::endl;
             std::cout << "2. Deposit for 9 months with 5% interest rate" << std::endl;
             std::cout << "3. Deposit for 12 months with 6% interest rate" << std::endl;
 
-            std::cin >> userInput;
+            isEnterValNum(userInput);
             deposit = static_cast<State_deposit>(userInput);
             break;
 
-        case DEPOSIT_AT_4:
+        case SM_DEP_DEPOSIT_AT_4:
             std::cout << "Chosed 6 months with 4% interest rate." << std::endl;
             client_Goods["DepositAt4"] += user_Input_Deposit;
-            client_Wallet_Money[key] -= user_Input_Deposit;
+            client_Wallet_Money[WALLET_KEY] -= user_Input_Deposit;
             addDeposit(actual_Turn_Nr, DEPOSIT_MONTHS_6, client_Goods["DepositAt4"], DEPOSIT_INVEST_RATE_4);
             deposit_Run = false;
             break;
 
-        case DEPOSIT_AT_5:
+        case SM_DEP_DEPOSIT_AT_5:
             std::cout << "Chosed 9 months with 5% interest rate." << std::endl;
             client_Goods["DepositAt5"] += user_Input_Deposit;
-            client_Wallet_Money[key] -= user_Input_Deposit;
+            client_Wallet_Money[WALLET_KEY] -= user_Input_Deposit;
             addDeposit(actual_Turn_Nr, DEPOSIT_MONTHS_9, client_Goods["DepositAt5"], DEPOSIT_INVEST_RATE_5);
             deposit_Run = false;
             break;
 
-        case DEPOSIT_AT_6:
+        case SM_DEP_DEPOSIT_AT_6:
             std::cout << "Chosed 12 months with 6% interest rate." << std::endl;
             client_Goods["DepositAt6"] += user_Input_Deposit;
-            client_Wallet_Money[key] -= user_Input_Deposit;
+            client_Wallet_Money[WALLET_KEY] -= user_Input_Deposit;
             addDeposit(actual_Turn_Nr, DEPOSIT_MONTHS_12, client_Goods["DepositAt6"], DEPOSIT_INVEST_RATE_6);
             deposit_Run = false;
             break;
 
         default:
             std::cout << "Invalid choice. Please choose a proper value. \n" << std::endl;
-            deposit = IDLE;
+            deposit = SM_DEP_IDLE;
             break;
         }
     } while (deposit_Run);
@@ -148,35 +137,38 @@ void UserAccountSavings::buyDeposit(static int& actual_Turn_Nr)
 
 void UserAccountSavings::buyGold(void)
 {
-    std::string key = "Money";
-
-    std::cout << "You have " << client_Wallet_Money[key] << " money." << std::endl;
+    std::cout << "You have " << client_Wallet_Money[WALLET_KEY] << " money." << std::endl;
     std::cout << "Enter how much money you want to spend on buying gold: " << std::endl;
 
     int gold_amount{ 0 };
     isEnterValNum(gold_amount);
 
-    if (client_Wallet_Money[key] < gold_amount)
+    if (client_Wallet_Money[WALLET_KEY] < gold_amount)
     {
-        std::cout << "You enter too low value." << std::endl;
+        std::cout << "You enter too high value." << std::endl;
         return;
     }
-    client_Goods["Gold"] = { gold_amount * (1 / course_assets["Gold"]) };
-    std::cout << "Gold purchased. Excellent choice." << std::endl;
+    client_Goods[WALLET_GOLD] += gold_amount * (1 / course_assets[WALLET_GOLD]);
+    client_Wallet_Money[WALLET_KEY] -= gold_amount;
+    std::cout << "Gold purchased. Excellent choice. :) " << std::endl;
 }
 
-void UserAccountSavings::withdrawMoney(walletGoods wallet)
+void UserAccountSavings::withdrawMoney()
 {
-    std::string key = "Money";
+    std::cout << "You have " << client_Wallet_Money[WALLET_KEY] << " money." << std::endl;
+    std::cout << "Enter how much money you want to spend on buying gold: " << std::endl;
 
-    if (client_Wallet_Money[key] > wallet[key])
+    int gold_amount{ 0 };
+    isEnterValNum(gold_amount);
+
+    if (client_Wallet_Money[WALLET_KEY] < gold_amount)
     {
-        std::cout << "You have too low money in your wallet" << std::endl;
+        std::cout << "You enter too high value." << std::endl;
         return;
     }
 
-    client_Wallet_Money[key] -= wallet[key];
-    std::cout << "Money withdrawed. Your actual account state is: " << client_Wallet_Money[key] << std::endl;
+    client_Wallet_Money[WALLET_KEY] -= gold_amount;
+    std::cout << "Money withdrawed. Your actual account state is: " << client_Wallet_Money[WALLET_KEY] << std::endl;
 }
 
 void UserAccountSavings::showMyWallet() const
@@ -188,3 +180,4 @@ void UserAccountSavings::showMyWallet() const
     }
     std::cout << "\n";
 }
+

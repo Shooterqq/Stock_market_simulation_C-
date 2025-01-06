@@ -22,6 +22,11 @@
 #include <cctype>
 #include <sstream>
 
+constexpr const char* WALLET_KEY = "Money";
+constexpr const char* WALLET_GOLD = "Gold";
+
+
+
 using assets = const std::map<std::string, std::vector<std::string>>;
 using walletInstruments = std::map<std::string, std::vector<float>>;
 using walletGoods = std::map<std::string, float>;
