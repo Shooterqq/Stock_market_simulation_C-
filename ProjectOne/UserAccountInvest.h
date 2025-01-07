@@ -3,6 +3,22 @@
 #include "UserAccount.h"
 #include "game_menu.h"
 
+constexpr const char* ST_MICROSOFT = "St_Microsoft";
+constexpr const char* ST_APPLE = "St_Apple";
+constexpr const char* ST_SAMSUNG = "St_Samsung";
+
+constexpr const char* DEV_HS_WARSAW = "House_Warsaw";
+constexpr const char* DEV_HS_BERLIN = "House_Berlin";
+constexpr const char* DEV_HS_MEXICO_CITY = "House_Mexico_City";
+
+constexpr const char* CUR_DOLLAR = "Cur_Dollar";
+constexpr const char* CUR_EURO = "Cur_Euro";
+constexpr const char* CUR_BRITISH_POUND = "Cur_British_Pound";
+
+constexpr const char* CRY_BITCOIN = "Cry_Bitcoin";
+constexpr const char* CRY_ETHERIUM = "Cry_Etherium";
+constexpr const char* CRY_DOGECOIN = "Cry_Dogecoin";
+
 typedef enum State_shares
 {
     SM_ST_IDLE,
@@ -35,22 +51,6 @@ typedef enum State_crypto
     SM_CR_DOGECOIN
 };
 
-constexpr const char* ST_MICROSOFT = "St_Microsoft";
-constexpr const char* ST_APPLE = "St_Apple";
-constexpr const char* ST_SAMSUNG = "St_Samsung";
-
-constexpr const char* DEV_HS_WARSAW = "House_Warsaw";
-constexpr const char* DEV_HS_BERLIN = "House_Berlin";
-constexpr const char* DEV_HS_MEXICO_CITY = "House_Mexico_City";
-
-constexpr const char* CUR_DOLLAR = "Cur_Dollar";
-constexpr const char* CUR_EURO = "Cur_Euro";
-constexpr const char* CUR_BRITISH_POUND = "Cur_British_Pound";
-
-constexpr const char* CRY_BITCOIN = "Cry_Bitcoin";
-constexpr const char* CRY_ETHERIUM = "Cry_Etherium";
-constexpr const char* CRY_DOGECOIN = "Cry_Dogecoin";
-
 extern const assets typeOfAssets;
 extern walletInstruments valueOfAssets;
 extern walletGoods course_assets;
@@ -64,7 +64,7 @@ public:
     void showGlobalWallet() const;
     void showMyWallet() const;
     void generateReport() const;
-    void buyCurrencies();     // kup walluty
+    void buyCurrencies();
     void buyCrypto();
 
 private:

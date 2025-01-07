@@ -28,6 +28,8 @@
 
 int main()
 {
+	const std::string filename = "market_data.csv";
+
 	extern std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
 	extern std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator;
 
@@ -98,9 +100,25 @@ int main()
 		case NEXT_TOUR:
 		{
 			std::cout << "\n ---===### A month has passed ###===--- \n";
+			const std::string filename = "market_data.csv";
+
+			menu_saveToCSV(course_assets, filename);
 			menu_updateAssetPrices(course_assets);
+
 			++turn;
 			sm_main_choose = MENU;
+			break;
+		}
+		case PLOT_CHART:
+		{
+			// Nazwa skryptu Python
+			std::string pythonScript = "plotChart.py";
+
+			// Ścieżka do pliku CSV z danymi
+			std::string csvFile = "market_data.csv";
+
+			// Wywołujemy funkcję
+			menu_runPythonScript(pythonScript, csvFile);
 			break;
 		}
 

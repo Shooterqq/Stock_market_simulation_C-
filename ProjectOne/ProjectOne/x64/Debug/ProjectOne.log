@@ -1,65 +1,34 @@
-﻿  UserAccountInvest.cpp
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.h(46,36): warning C4042: „turn”: ma złą klasę magazynu
-  (kompilowanie pliku źródłowego „UserAccountInvest.cpp”)
+﻿  game_menu.cpp
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(22,14): warning C4091: "typedef ": zignorowano na lewo od "State_shares" podczas gdy brak deklaracji zmiennej
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(6,14): warning C4091: "typedef ": zignorowano na lewo od "State_shares" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountInvest.cpp”)
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(30,14): warning C4091: "typedef ": zignorowano na lewo od "State_houses" podczas gdy brak deklaracji zmiennej
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(14,14): warning C4091: "typedef ": zignorowano na lewo od "State_houses" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountInvest.cpp”)
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(38,14): warning C4091: "typedef ": zignorowano na lewo od "State_currenties" podczas gdy brak deklaracji zmiennej
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(22,14): warning C4091: "typedef ": zignorowano na lewo od "State_currenties" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountInvest.cpp”)
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(46,14): warning C4091: "typedef ": zignorowano na lewo od "State_crypto" podczas gdy brak deklaracji zmiennej
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(30,14): warning C4091: "typedef ": zignorowano na lewo od "State_crypto" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountInvest.cpp”)
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.h(49,36): warning C4042: „turn”: ma złą klasę magazynu
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty2", możliwa utrata danych
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty=double
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         and
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty2=float
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
-  (kompilowanie pliku źródłowego „UserAccountInvest.cpp”)
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54):
-      kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
-          E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccount.h(60,9):
-          zobacz odwołanie do kompilowanego tworzenia wystąpienia „std::pair<const std::string,float>::pair<const char(&)[6],double,0>(_Other1,_Other2 &&) noexcept(false)” funkcji szablon
-          with
-          [
-              _Other1=const char (&)[6],
-              _Other2=double
-          ]
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountSavings.h(18,16): warning C4091: "typedef ": zignorowano na lewo od "Deposit_options" podczas gdy brak deklaracji zmiennej
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-  UserAccountSavings.cpp
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(6,14): warning C4091: "typedef ": zignorowano na lewo od "State_shares" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
-  
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(14,14): warning C4091: "typedef ": zignorowano na lewo od "State_houses" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
-  
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(22,14): warning C4091: "typedef ": zignorowano na lewo od "State_currenties" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
-  
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountInvest.h(30,14): warning C4091: "typedef ": zignorowano na lewo od "State_crypto" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
-  
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.h(46,36): warning C4042: „turn”: ma złą klasę magazynu
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
-  
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountSavings.h(10,16): warning C4091: "typedef ": zignorowano na lewo od "Deposit_options" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
-  
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountSavings.h(17,14): warning C4091: "typedef ": zignorowano na lewo od "State_deposit" podczas gdy brak deklaracji zmiennej
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountSavings.h(25,14): warning C4091: "typedef ": zignorowano na lewo od "State_deposit" podczas gdy brak deklaracji zmiennej
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
 E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountSavings.h(45,33): warning C4042: „actual_turn_nr”: ma złą klasę magazynu
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
   
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccountSavings.cpp(74,49): warning C4042: „actual_Turn_Nr”: ma złą klasę magazynu
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(17,29): warning C4244: "+=": konwersja z "double" do "_Ty2", możliwa utrata danych
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(17,29): warning C4244:         with
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(17,29): warning C4244:         [
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(17,29): warning C4244:             _Ty2=float
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(17,29): warning C4244:         ]
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(275,36): warning C4042: „turn”: ma złą klasę magazynu
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244: "inicjowanie": konwersja z "_Ty" do "_Ty2", możliwa utrata danych
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
@@ -69,7 +38,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.3443
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         [
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:             _Ty2=float
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54): warning C4244:         ]
-  (kompilowanie pliku źródłowego „UserAccountSavings.cpp”)
+  (kompilowanie pliku źródłowego „game_menu.cpp”)
       C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\utility(263,54):
       kontekst tworzenia wystąpienia szablonu (najpierw najstarszy) to
           E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\UserAccount.h(60,9):
@@ -80,5 +49,4 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.3443
               _Other2=double
           ]
   
-  Generowanie kodu...
   ProjectOne.vcxproj -> E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\x64\Debug\ProjectOne.exe

@@ -20,6 +20,78 @@ void menu_updateAssetPrices(walletGoods& marketPrices)
     std::cout << "Course of assets are changed.\n";
 }
 
+void menu_saveToCSV(const walletGoods& market_Prices, const std::string& file_Name) 
+{
+    std::ofstream file;
+
+    bool fileExists = std::ifstream(file_Name).good();   // Checking if a file already exists
+
+    /* 
+    Open the file in write mode(out) with the append option(app)
+    std::ios::out - Opens the file in write mode, allowing data to be written to the file.
+    std::ios::app - Sets the file cursor to the end to append new data without overwriting existing data.
+    If the file does not exist, it will be created. If it does exist, the data will be appended to the end. 
+    */
+    file.open(file_Name, std::ios::out | std::ios::app);     // <-- std::ios::trunc - alternative for out
+
+    if (!file.is_open()) 
+    {
+        std::cerr << "Error: Could not open file for writing.\n";
+        return;
+    }
+
+    file << std::fixed << std::setprecision(2);     // Setting float number and precision 
+
+    if (!fileExists)            // If the file does not exist yet, save the headers
+    {
+        for (auto it = market_Prices.begin(); it != market_Prices.end(); ++it)
+        {
+            file << it->first;
+            if (std::next(it) != market_Prices.end())
+            {
+                file << ";";    // next column
+            }
+        }
+        file << "\n";           // next row
+    }
+
+    // Saving the rate value (each iteration in a new line)
+    for (auto it = market_Prices.begin(); it != market_Prices.end(); ++it)
+    {
+        file << it->second;
+        if (std::next(it) != market_Prices.end())
+        {
+            file << ";";        // next column
+        }
+    }
+    file << "\n";               // next row
+
+    file.close();
+    std::cout << "Data saved to " << file_Name << "\n";
+}
+
+void menu_runPythonScript(const std::string& scriptName, const std::string& csvFile) 
+{
+    int culumn_Num{ 0 };
+    menu_readAssetsNames();
+    do
+    {
+        std::cout << "\nEnter value betwen 0 - 18: ";
+        isEnterValNum(culumn_Num);
+    }while (!(culumn_Num <= 18 && culumn_Num >= 0));
+
+    std::string command = "python " + scriptName + " " + csvFile + " " + std::to_string(culumn_Num);
+    int result = std::system(command.c_str());
+    if (result == 0)
+    {
+        std::cout << "Python script executed successfully.\n";
+    }
+    else 
+    {
+        std::cerr << "Error: Python script execution failed.\n";
+    }
+}
+
 void menu_displayMenu(void)
 {
     std::cout << "1. Create account\n";
@@ -28,7 +100,8 @@ void menu_displayMenu(void)
     std::cout << "4. Manage account\n";
     std::cout << "5. Show history\n";
     std::cout << "6. Next turn\n";
-    std::cout << "7. Exit\n\n";
+    std::cout << "7. Plot chart of asset rate\n";
+    std::cout << "8. Exit\n\n";
     std::cout << "Enter option: ";
 }
 
@@ -304,5 +377,13 @@ void menu_manageAccount(static int turn)
     }
 }
 
-
+void menu_readAssetsNames(void)
+{
+    int i{ 0 };
+    for (const auto name: course_assets)
+    {
+        std::cout << i << ". " << name.first << std::endl;
+        ++i;
+    }
+}
 

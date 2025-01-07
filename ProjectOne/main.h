@@ -18,6 +18,7 @@ typedef enum
     MANAGE_ACCOUNT,
     SHOW_HISTORY,
     NEXT_TOUR,
+    PLOT_CHART,
     EXIT
 }sm_main;
 

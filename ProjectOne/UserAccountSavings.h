@@ -3,9 +3,17 @@
 #include "UserAccount.h"
 #include "game_menu.h"
 
-extern const assets typeOfAssets;
-extern walletInstruments valueOfAssets;
-extern walletGoods course_assets;
+constexpr int DEPOSIT_INVEST_RATE_4{ 4 };      // float but int is better - less memory
+constexpr int DEPOSIT_INVEST_RATE_5{ 5 };
+constexpr int DEPOSIT_INVEST_RATE_6{ 6 };
+
+constexpr int DEPOSIT_MONTHS_6{ 6 };
+constexpr int DEPOSIT_MONTHS_9{ 9 };
+constexpr int DEPOSIT_MONTHS_12{ 12 };
+
+constexpr const char* DDEPOSIT_AT_4 = "DepositAt4";
+constexpr const char* DDEPOSIT_AT_5 = "DepositAt5";
+constexpr const char* DDEPOSIT_AT_6 = "DepositAt6";
 
 typedef struct Deposit_options {
     int startTurn;     // Tura, w której rozpoczêto lokatê
@@ -22,17 +30,9 @@ typedef enum State_deposit
     SM_DEP_DEPOSIT_AT_6
 };
 
-constexpr int DEPOSIT_INVEST_RATE_4 { 4 };      // float but int is better - less memory
-constexpr int DEPOSIT_INVEST_RATE_5 { 5 };
-constexpr int DEPOSIT_INVEST_RATE_6 { 6 };
-
-constexpr int DEPOSIT_MONTHS_6 { 6 };
-constexpr int DEPOSIT_MONTHS_9 { 9 };
-constexpr int DEPOSIT_MONTHS_12 { 12 };
-
-constexpr const char* DDEPOSIT_AT_4 = "DepositAt4";
-constexpr const char* DDEPOSIT_AT_5 = "DepositAt5";
-constexpr const char* DDEPOSIT_AT_6 = "DepositAt6";
+extern const assets typeOfAssets;
+extern walletInstruments valueOfAssets;
+extern walletGoods course_assets;
 
 class UserAccountSavings : public UserAccount
 {

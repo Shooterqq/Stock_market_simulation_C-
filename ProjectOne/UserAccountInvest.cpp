@@ -167,7 +167,7 @@ void UserAccountInvest::showMyWallet() const
 
 void UserAccountInvest::buyCurrencies()
 {
-    State_currenties currenties = SM_CUR_IDLE;
+    State_currenties currencies = SM_CUR_IDLE;
     float in_Val_Of_Currienties {0};
 
     std::cout << "Your have " << client_Wallet_Money[WALLET_KEY] << " money on your account.\n";
@@ -184,7 +184,7 @@ void UserAccountInvest::buyCurrencies()
     bool currenties_Run {true};
 
 	do {
-		switch (currenties)
+		switch (currencies)
 		{
 		case SM_CUR_IDLE:
 			std::cout << "Please choose currienties to buy:" << std::endl;
@@ -193,7 +193,7 @@ void UserAccountInvest::buyCurrencies()
 			std::cout << "3. British Pound" << std::endl;
 
 			isEnterValNum(cur_Chose_Option);
-			currenties = static_cast<State_currenties>(cur_Chose_Option);
+            currencies = static_cast<State_currenties>(cur_Chose_Option);
 			break;
 
 		case SM_CUR_DOLLAR:
@@ -219,7 +219,7 @@ void UserAccountInvest::buyCurrencies()
 
 		default:
 			std::cout << "Invalid choice. Please choose a proper value." << std::endl;
-			currenties = SM_CUR_IDLE;
+            currencies = SM_CUR_IDLE;
 			break;
 		}
 	} while (currenties_Run);
