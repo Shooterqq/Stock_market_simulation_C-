@@ -84,7 +84,7 @@
               "RelativeDocumentMoniker": "game_menu.h",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
               "RelativeToolTip": "game_menu.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-27T14:49:13.185Z",
               "EditorCaption": ""
@@ -105,8 +105,16 @@
         },
         {
           "DockedWidth": 197,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -117,8 +125,7 @@
               "RelativeToolTip": "main.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-07T15:55:10.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T15:55:10.413Z"
             },
             {
               "$type": "Document",
@@ -153,7 +160,7 @@
               "RelativeDocumentMoniker": "game_menu.cpp",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
               "RelativeToolTip": "game_menu.cpp",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAAwE4AAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAlwL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-27T14:48:34.949Z",
               "EditorCaption": ""
@@ -168,8 +175,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAFEAAAAAAAAAAAAAAGgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-20T13:01:52.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T13:01:52.125Z"
             },
             {
               "$type": "Document",
@@ -182,20 +188,6 @@
               "ViewState": "AgIAAFEAAAAAAAAAAAAAwLcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-04T23:20:59.223Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

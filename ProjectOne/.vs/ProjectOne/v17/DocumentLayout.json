@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:game_menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -78,13 +78,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "game_menu.h",
               "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
               "RelativeDocumentMoniker": "game_menu.h",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
               "RelativeToolTip": "game_menu.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACcAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-27T14:49:13.185Z",
               "EditorCaption": ""
@@ -105,8 +105,16 @@
         },
         {
           "DockedWidth": 197,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -117,8 +125,7 @@
               "RelativeToolTip": "main.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-07T15:55:10.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-07T15:55:10.413Z"
             },
             {
               "$type": "Document",
@@ -142,18 +149,17 @@
               "RelativeToolTip": "UserAccount.cpp",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwK8AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-20T21:20:13.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T21:20:13.594Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "game_menu.cpp",
               "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
               "RelativeDocumentMoniker": "game_menu.cpp",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
               "RelativeToolTip": "game_menu.cpp",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAAwGgAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAlwL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-27T14:48:34.949Z",
               "EditorCaption": ""
@@ -168,8 +174,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAFEAAAAAAAAAAAAAAGgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-20T13:01:52.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T13:01:52.125Z"
             },
             {
               "$type": "Document",
@@ -182,20 +187,6 @@
               "ViewState": "AgIAAFEAAAAAAAAAAAAAwLcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-04T23:20:59.223Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
