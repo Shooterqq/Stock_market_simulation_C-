@@ -1,7 +1,8 @@
 # Stock Market Simulation
 This program was created only by myself in Visual Studio 2022 using C++20 and Python 3.11 with matplotlib and pandas.
-Game at the end of turn adds to CSV file new random assets values. Using python you can plot chart witch stock values of choosed asset. 
-Used are smart pointers, dynamic pointer casts, lambda functions, templates, iterators, classes, polimorphism, virtual functions, constructors, overloaded operators, file operations, exceptions handling, variables from STL like map, list, vestor etc. and many many more.
+Game at the end of turn adds to CSV file new random assets values. Using python you can plot chart witch stock values of choosed asset.
+Python script reads CSV file and passed agruments by C++ for plot chart witch choosed asset course.
+Used are smart pointers, dynamic pointer casts, lambda functions, templates, iterators, classes, polimorphism, virtual functions, constructors, overloaded operators, file operations, exceptions handling, variables from STL like map, list, vector etc. and many many more.
 
 C++
 
