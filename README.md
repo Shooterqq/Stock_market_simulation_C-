@@ -55,12 +55,7 @@ Course of assets are changed randomply in every round so you must be carefull. G
      ```
 
 ### 3. **Running the Game**:
-   - open ProjectOne.exe in Stock_market_simulation_C --> ProjectOne
-     
-   - After compiling the program, run the game from the terminal:
-     ```bash
-     ./your_program_name
-     ```
+   - open ProjectOne.exe in Stock_market_simulation_C --> ProjectOne --> x64 --> Release --> ProjectOne.exe
 
 ## Features
 
