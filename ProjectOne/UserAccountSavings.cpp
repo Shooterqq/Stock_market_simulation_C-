@@ -173,7 +173,7 @@ void UserAccountSavings::withdrawMoney()
 
 void UserAccountSavings::showMyWallet() const
 {
-    std::cout << "\nAccount: " << this->getClientName() << " " << this->getClientSurname() << "\n";
+    std::cout << "\nAccount: " << this->getClientName() << " " << this->getClientSurname() << std::endl;
     for (const auto& [category, values] : client_Goods)
     {
         std::cout << category << " - " << values << "\n";

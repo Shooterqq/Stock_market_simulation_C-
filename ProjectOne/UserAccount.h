@@ -13,8 +13,6 @@
 #include <memory>
 //#include <matplotlibcpp.h>        // later for charts
 
-
-
 float chooseMeters(void);
 
 // --------------------------------------------------------------------------------------------------------------------------------------------- //
@@ -23,8 +21,6 @@ using assets = const std::map<std::string, std::vector<std::string>>;
 using walletInstruments = std::map<std::string, std::vector<float>>;
 using walletGoods = std::map<std::string, float>;
 using walletHistory = std::multimap<std::string, std::array<float, 2>>;
-
-
 
 class UserAccount
 {
@@ -46,8 +42,8 @@ public:
     void getNumberOfClients() const;
     virtual void showGlobalWallet() const = 0;        // inne wyswietlane aktywa dla kazdego 
     virtual void showHistory() const;
-    void depositMoney(std::string assetType, float deposit_Amount);
-    virtual double calculateAccountWorth() const;
+    void depositMoney();
+    virtual float calculateAccountWorth() const;
     virtual void generateReport() const = 0;
     virtual void showMyWallet() const;
     void sellAsset(void);

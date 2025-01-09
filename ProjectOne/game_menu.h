@@ -26,8 +26,6 @@
 constexpr const char* WALLET_KEY = "Money";
 constexpr const char* WALLET_GOLD = "Gold";
 
-
-
 using assets = const std::map<std::string, std::vector<std::string>>;
 using walletInstruments = std::map<std::string, std::vector<float>>;
 using walletGoods = std::map<std::string, float>;
@@ -48,6 +46,7 @@ void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<User
 std::string menu_createAccount(void);
 void menu_manageAccount(static int turn);
 void menu_readAssetsNames(void);
+void showRanking(void);
 
 //----------------------------------------------------------------------------------------------------------------------------
 

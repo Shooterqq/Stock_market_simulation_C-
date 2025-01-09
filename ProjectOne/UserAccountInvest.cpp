@@ -86,7 +86,7 @@ void UserAccountInvest::buyHouses()
             std::cout << "2. Berlin" << std::endl;
             std::cout << "3. Mexico City" << std::endl;
 
-            std::cin >> userInputCity;
+            isEnterValNum(userInputCity);
             houses = static_cast<State_houses>(userInputCity);
             break;
 
@@ -127,7 +127,7 @@ float chooseMeters(void)
     float userInputMeters;
 
     std::cout << "Chow much meters?:" << std::endl;
-    std::cin >> userInputMeters;
+    isEnterValNum(userInputMeters);
 
     return userInputMeters;
 }
@@ -253,7 +253,7 @@ void UserAccountInvest::buyCrypto()
             std::cout << "2. Etherium" << std::endl;
             std::cout << "3. Dogecoin" << std::endl;
 
-            std::cin >> userInputCurypto;
+            isEnterValNum(userInputCurypto);
             crypto = static_cast<State_crypto>(userInputCurypto);
             break;
 

@@ -11,16 +11,16 @@
 
 typedef enum
 {
-    MENU,
-    CREATE_ACCOUNT,
-    CHANGE_ACCOUNT,
-    SHOW_ACCOUNTS,
-    MANAGE_ACCOUNT,
-    SHOW_HISTORY,
-    NEXT_TOUR,
-    PLOT_CHART,
-    EXIT
-}sm_main;
+    SM_MN_MENU,
+    SM_MN_CREATE_ACCOUNT,
+    SM_MN_CHANGE_ACCOUNT,
+    SM_MN_SHOW_ACCOUNTS,
+    SM_MN_MANAGE_ACCOUNT,
+    SM_MN_SHOW_RANKING,
+    SM_MN_NEXT_TOUR,
+    SM_MN_PLOT_CHART,
+    SM_MN_EXIT
+}sm_mn_main;
 
 
 

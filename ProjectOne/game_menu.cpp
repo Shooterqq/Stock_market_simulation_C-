@@ -85,10 +85,12 @@ void menu_runPythonScript(const std::string& scriptName, const std::string& csvF
     if (result == 0)
     {
         std::cout << "Python script executed successfully.\n";
+        return;
     }
     else 
     {
         std::cerr << "Error: Python script execution failed.\n";
+        return;
     }
 }
 
@@ -98,7 +100,7 @@ void menu_displayMenu(void)
     std::cout << "2. Change account\n";
     std::cout << "3. Display wallet\n";
     std::cout << "4. Manage account\n";
-    std::cout << "5. Show history\n";
+    std::cout << "5. Show ranking\n";
     std::cout << "6. Next turn\n";
     std::cout << "7. Plot chart of asset rate\n";
     std::cout << "8. Exit\n\n";
@@ -114,12 +116,12 @@ void menu_changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<Use
 {
     std::string name, surname;
 
-    std::cout << "--Zmiana konta--\n";
+    std::cout << "--Change account--\n";
 
-    std::cout << "Podaj imiê: ";
+    std::cout << "Enter name: ";
     std::cin >> name;
 
-    std::cout << "Podaj nazwisko: ";
+    std::cout << "Enter surname: ";
     std::cin >> surname;
 
     std::string fullName = name + " " + surname;
@@ -129,11 +131,11 @@ void menu_changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<Use
     if (it != accountMap.end()) 
     {
         account_Iterator = it;
-        std::cout << "Zmieniono na konto: " << fullName << "\n";
+        std::cout << "Changed to account: " << fullName << "\n";
     }
     else 
     {
-        std::cout << "Nie znaleziono konta: " << fullName << "\n";
+        std::cout << "Account not found: " << fullName << "\n";
     }
 }
 
@@ -141,9 +143,8 @@ void menu_changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<Use
 
 void menu_showSaveAccManageMenu(void)
 {
-    std::cout << "Type: Konto oszczêdnoœciowe." << std::endl;
+    std::cout << "Type: Savings account.\n" << std::endl;
 
-    std::cout << "Choose option to manage your account:" << std::endl;
     std::cout << "1. showGlobalWallet" << std::endl;
     std::cout << "2. buyDeposit" << std::endl;
     std::cout << "3. buyGold" << std::endl;
@@ -158,13 +159,13 @@ void menu_showSaveAccManageMenu(void)
     std::cout << "12. withdrawMoney" << std::endl;
     std::cout << "13. Delete account" << std::endl;
     std::cout << "14. Exit" << std::endl;
+    std::cout << "Choose option to manage your account: ";
 }
 
 void menu_showInvestAccManageMenu(void)
 {
-    std::cout << "Typ: Konto inwestycyjne." << std::endl;
+    std::cout << "Typ: investition account.\n" << std::endl;
 
-    std::cout << "Choose option to manage your account:" << std::endl;
     std::cout << "1. buyCrypto" << std::endl;
     std::cout << "2. buyCurrencies" << std::endl;
     std::cout << "3. buyHouses" << std::endl;
@@ -180,13 +181,13 @@ void menu_showInvestAccManageMenu(void)
     std::cout << "13. showMyWallet" << std::endl;
     std::cout << "14. Delete account" << std::endl;
     std::cout << "15. Exit" << std::endl;
+    std::cout << "Choose option to manage your account:";
 }
 
 void menu_gameMenuRutine(void)
 {
     1;
 }
-
 
 void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<UserAccount>>& accountMap, int currentTurn)
 {
@@ -222,19 +223,20 @@ std::string menu_createAccount(void)
     float initial_Deposit{ 0 };
     int account_type{ 0 };
 
-    std::cout << "Please choose account type to create: \n";
+    std::cout << "\nAccount types: \n";
     std::cout << "1. Savings account \n";
     std::cout << "2. Investition account \n";
-    std::cin >> account_type;
+    std::cout << "Enter account type to create: ";
+    isEnterValNum(account_type);
 
-    std::cout << "\nEnter your name: ";
+    std::cout << "Enter your name: ";
     std::cin >> name;
 
-    std::cout << "\nEnter your surname: ";
+    std::cout << "Enter your surname: ";
     std::cin >> surname;
 
-    std::cout << "\nEnter initial deposit: ";
-    std::cin >> initial_Deposit;
+    std::cout << "Enter initial deposit: ";
+    isEnterValNum(initial_Deposit);
 
     std::string fullName = name + " " + surname;
 
@@ -256,11 +258,11 @@ std::string menu_createAccount(void)
         if (accountMap.count(fullName) == 0)
         {
             accountMap[fullName] = std::make_shared<UserAccountInvest>(name, surname, initial_Deposit);
-            std::cout << "Dodano nowe konto dla: " << fullName << std::endl;
+            std::cout << "Account added for: " << fullName << std::endl;
         }
         else
         {
-            std::cout << "Konto ju¿ istnieje dla: " << fullName << std::endl;
+            std::cout << "This account already exist: " << fullName << std::endl;
         }
     }
     else
@@ -287,7 +289,7 @@ void menu_manageAccount(static int turn)
                 {2, [&]() { savingsAccount->buyDeposit(turn); }},
                 {3, [&]() { savingsAccount->buyGold(); }},
                 {4, [&]() { savingsAccount->calculateAccountWorth(); }},
-                {5, [&]() { savingsAccount->depositMoney("Money", 5.0f); }},
+                {5, [&]() { savingsAccount->depositMoney(); }},
                 {6, [&]() { savingsAccount->generateReport(); }},
                 {7, [&]() { savingsAccount->getClientName(); }},
                 {8, [&]() { savingsAccount->getClientSurname(); }},
@@ -297,12 +299,12 @@ void menu_manageAccount(static int turn)
                 {12, [&]() { savingsAccount->withdrawMoney(); }},
                 {13, [&]() { savingsAccount->~UserAccountSavings();
                              accountMap.erase(account_Iterator);
-                             std::cout << "Konto zosta³o usuniête." << std::endl; }},
+                             std::cout << "Account deleted." << std::endl; }},
             };
 
             menu_showSaveAccManageMenu();
 
-            std::cin >> choosed_func;
+            isEnterValNum(choosed_func);
 
             if (choosed_func == 14) {
                 std::cout << "Exiting program." << std::endl;
@@ -332,7 +334,7 @@ void menu_manageAccount(static int turn)
                 {3, [&]() { investAccount->buyHouses(); }},
                 {4, [&]() { investAccount->buyShares(); }},
                 {5, [&]() { investAccount->calculateAccountWorth(); }},
-                {6, [&]() { investAccount->depositMoney("Money", 100); }},
+                {6, [&]() { investAccount->depositMoney(); }},
                 {7, [&]() { investAccount->generateReport(); }},
                 {8, [&]() { investAccount->getClientName(); }},
                 {9, [&]() { investAccount->getClientSurname(); }},
@@ -340,16 +342,16 @@ void menu_manageAccount(static int turn)
                 {11, [&]() { investAccount->showGlobalWallet(); }},
                 {12, [&]() { investAccount->showHistory(); }},
                 {13, [&]() { investAccount->showMyWallet(); }},
-                {14, [&]() { investAccount->~UserAccountInvest(); 
+                {14, [&]() { investAccount->~UserAccountInvest();
                              accountMap.erase(account_Iterator);
-                             std::cout << "Konto zosta³o usuniête." << std::endl; }},
+                             std::cout << "Account deleted." << std::endl; }},
             };
 
             menu_showInvestAccManageMenu();
 
-            std::cin >> choosed_func;
+            isEnterValNum(choosed_func);
 
-            if (choosed_func == 14)
+            if (choosed_func == 15)
             {
                 std::cout << "Exiting program." << std::endl;
                 return;
@@ -358,7 +360,7 @@ void menu_manageAccount(static int turn)
             auto action = actions_Invest_Account.find(choosed_func);
             if (action != actions_Invest_Account.end())
             {
-                action->second();  // Wywo³anie odpowiedniej funkcji
+                action->second();  // Call the selected lambda function
             }
             else
             {
@@ -373,7 +375,7 @@ void menu_manageAccount(static int turn)
     }
     else
     {
-        std::cout << "Konto o podanym imieniu i nazwisku nie istnieje!" << std::endl;
+        std::cout << "Account with that name and surname doesn't exist!" << std::endl;
     }
 }
 
@@ -387,3 +389,27 @@ void menu_readAssetsNames(void)
     }
 }
 
+void showRanking(void)
+{
+    std::vector<std::pair<std::string, float>> accounts_Worth_List;
+
+    // 1. Accumulate all account worths in var
+    for (auto account_Iterator = accountMap.begin(); account_Iterator != accountMap.end(); ++account_Iterator) 
+    {
+        accounts_Worth_List.push_back({account_Iterator->first, account_Iterator->second->calculateAccountWorth()});
+    }
+
+    // 2. Sort
+    std::sort(accounts_Worth_List.begin(), accounts_Worth_List.end(),
+        [](const std::pair<std::string, float>& a, const std::pair<std::string, float>& b) 
+        {
+            return a.second > b.second;
+        });
+
+    // 3. Display accounts ranking
+    std::cout << "Accounts ranking:\n";
+    for (const auto& entry : accounts_Worth_List)
+    {
+        std::cout << "Account: " << entry.first << ", Worth: " << entry.second << "\n";
+    }
+}

@@ -25,7 +25,6 @@
 #include "game_menu.h"
 #include "UserAccountInvest.h"
 
-
 int main()
 {
 	const std::string filename = "market_data.csv";
@@ -35,15 +34,13 @@ int main()
 
 	bool gameRunning = true;
 	static int turn { 0 };
-	sm_main sm_main_choose = MENU;
+	sm_mn_main sm_main_choose = SM_MN_MENU;
 
 	while (gameRunning) 
 	{
-		menu_updateAllDeposits(accountMap, turn);
-
 		switch (sm_main_choose)
 		{
-		case MENU:
+		case SM_MN_MENU:
 		{
 			std::cout << "\n+++++++++++++++++++++++++++++++++++++++++++++++++";
 			std::cout << "\n---=== Turn number: " << turn << " ===---\n\n";
@@ -51,78 +48,78 @@ int main()
 
 			int input_val{ 0 };
 			isEnterValNum(input_val);
-			sm_main_choose = static_cast<sm_main>(input_val);
+			sm_main_choose = static_cast<sm_mn_main>(input_val);
 			break;
 		}
 
-		case CREATE_ACCOUNT:
+		case SM_MN_CREATE_ACCOUNT:
 		{
 			menu_createAccount();
-			sm_main_choose = MENU;
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 
-		case CHANGE_ACCOUNT:
+		case SM_MN_CHANGE_ACCOUNT:
 		{
 			menu_changeKnownAccount(account_Iterator);
-			sm_main_choose = MENU;
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 
-		case SHOW_ACCOUNTS:
+		case SM_MN_SHOW_ACCOUNTS:
 		{
 			for (const auto& account : accountMap)
 			{
 				account.second->showMyWallet();
 			}
-			sm_main_choose = MENU;
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 
-		case MANAGE_ACCOUNT:
+		case SM_MN_MANAGE_ACCOUNT:
 		{
 			menu_manageAccount(turn);
 
-			sm_main_choose = MENU;
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 
-		case SHOW_HISTORY:
+		case SM_MN_SHOW_RANKING:		// show ranking
 		{
-			for (const auto& account : accountMap)
-			{
-				account.second->showHistory();
-			}
-			sm_main_choose = MENU;
+			//std::cout << account_Iterator->second->calculateAccountWorth();
+			showRanking();
+
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 
-		case NEXT_TOUR:
+		case SM_MN_NEXT_TOUR:
 		{
 			std::cout << "\n ---===### A month has passed ###===--- \n";
 			const std::string filename = "market_data.csv";
 
+			menu_updateAllDeposits(accountMap, turn);
 			menu_saveToCSV(course_assets, filename);
 			menu_updateAssetPrices(course_assets);
 
 			++turn;
-			sm_main_choose = MENU;
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
-		case PLOT_CHART:
+		case SM_MN_PLOT_CHART:
 		{
-			// Nazwa skryptu Python
+			// Python script name
 			std::string pythonScript = "plotChart.py";
 
-			// Ścieżka do pliku CSV z danymi
+			// CSV file name
 			std::string csvFile = "market_data.csv";
 
-			// Wywołujemy funkcję
 			menu_runPythonScript(pythonScript, csvFile);
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 
-		case EXIT:
+		case SM_MN_EXIT:
 		{
 			gameRunning = false;
 			break;
@@ -130,13 +127,11 @@ int main()
 
 		default:
 			std::cout << "\nInvalid value.\n";
-			sm_main_choose = MENU;
+			sm_main_choose = SM_MN_MENU;
 			break;
 		}
 	}
-
 	return 0;
-
 }
 
 

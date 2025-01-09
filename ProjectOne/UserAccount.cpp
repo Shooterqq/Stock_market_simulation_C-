@@ -82,7 +82,7 @@ void UserAccount::getNumberOfClients() const
 
 void UserAccount::showMyWallet() const
 {
-    std::cout << "\nAccount: " << this->getClientName() << " " << this->getClientSurname() << "\n";
+    std::cout << "\nAccount: " << this->getClientName() << " " << this->getClientSurname() << std::endl;    
     for (const auto& [category, values] : client_Goods)
     {
         std::cout << category << " - " << values << "\n";
@@ -107,14 +107,24 @@ void UserAccount::showGlobalWallet() const
     }
 }
 
-void UserAccount::depositMoney(std::string assetType, float deposit_Amount)     // TODO
+void UserAccount::depositMoney()     // TODO
 {
+    menu_readAssetsNames();
+
+    std::string assetType = "Money";
+    std::cout << "Enter type of asset to deposit: ";
+    std::cin >> assetType;
+
+    float input_Deposit{ 0 };
+    std::cout << "Enter amount to deposit: ";
+    isEnterValNum(input_Deposit);
+
     try
     {
-        client_Goods.at(assetType) += deposit_Amount; // Increase value if key exists
+        client_Goods.at(assetType) += input_Deposit;            // Increase value if key exists
 
         float courseOfAsset = course_assets.at(assetType);
-        client_History.insert({ assetType, {courseOfAsset, deposit_Amount} });
+        client_History.insert({ assetType, {courseOfAsset, input_Deposit} });
     }
     catch (const std::out_of_range& e)
     {
@@ -122,21 +132,24 @@ void UserAccount::depositMoney(std::string assetType, float deposit_Amount)     
     }
 }
 
-
-double UserAccount::calculateAccountWorth() const
+float UserAccount::calculateAccountWorth() const
 {
-    double total_Worth = 0;
+    float total_Worth = 0;
 
-    for (const auto& [category, keys] : typeOfAssets) 
+    for (const auto& [category, keys] : course_assets)
     {
-        const auto& rates = valueOfAssets.at(category);
-        for (size_t i = 0; i < keys.size(); ++i) 
+        for (const auto& [asset, amount] : client_Goods)
         {
-            float multiplier = (category == "Deposits" || category == "Bonds") ? rates[i] / 100 : rates[i];
-            total_Worth += client_Goods.at(keys[i]) * multiplier;
+            float multiplier = (category.find("Deposit") != std::string::npos ||
+                category.find("Bonds") != std::string::npos) ? keys / 100 : keys;
+
+            if (category == asset)
+            {
+                total_Worth += amount * multiplier;
+            }
         }
     }
-
+    total_Worth += client_Wallet_Money.at("Money");
     return total_Worth;
 }
 
