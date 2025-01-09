@@ -64,6 +64,29 @@ UserAccount::~UserAccount()
     client_Id -= 1;
 }
 
+bool UserAccount::operator==(const UserAccount& other) const
+{
+    return client_Wallet_Money.at("Money") == other.client_Wallet_Money.at("Money");
+}
+
+bool UserAccount::operator<(const UserAccount& other) const
+{
+    return client_Wallet_Money.at("Money") < other.client_Wallet_Money.at("Money");
+}
+
+bool UserAccount::operator>(const UserAccount& other) const
+{
+    auto it1 = client_Wallet_Money.find("Money");
+    auto it2 = other.client_Wallet_Money.find("Money");
+
+    if (it1 == client_Wallet_Money.end() || it2 == other.client_Wallet_Money.end()) 
+    {
+        throw std::runtime_error("Key 'Money' not found in client_Wallet_Money.");
+    }
+
+    return it1->second > it2->second;
+}
+
 std::string UserAccount::getClientName() const
 {
     return client_Name;
@@ -97,7 +120,7 @@ void UserAccount::showGlobalWallet() const
         std::cout << assetType.first << ":" << std::endl;
 
         // For each item in the asset type
-        for (size_t i = 0; i < assetType.second.size(); ++i) 
+        for (size_t i = 0; i < assetType.second.size(); ++i)
         {
             // Listing the name of the asset and its value
             std::cout << "  " << assetType.second[i] << " - " \

@@ -5,7 +5,6 @@
 std::unordered_map<std::string, std::shared_ptr<UserAccount>> accountMap;
 std::unordered_map<std::string, std::shared_ptr<UserAccount>>::iterator account_Iterator = accountMap.begin();
 
-
 void menu_updateAssetPrices(walletGoods& marketPrices)
 {
     std::random_device rd;
@@ -139,8 +138,6 @@ void menu_changeKnownAccount(std::unordered_map<std::string, std::shared_ptr<Use
     }
 }
 
-
-
 void menu_showSaveAccManageMenu(void)
 {
     std::cout << "Type: Savings account.\n" << std::endl;
@@ -201,7 +198,6 @@ void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<User
             //  SprawdŸ, czy klucz "Money" istnieje
             //if (savingsAccount->client_Wallet_Money.find("Money") != savingsAccount->client_Wallet_Money.end())
             //{
-                // Pobierz referencjê do wartoœci
                 savingsAccount->updateDeposits(currentTurn);
             //}
             //else
@@ -215,7 +211,6 @@ void menu_updateAllDeposits(std::unordered_map<std::string, std::shared_ptr<User
         }
     }
 }
-
 
 std::string menu_createAccount(void)
 {
@@ -297,8 +292,7 @@ void menu_manageAccount(static int turn)
                 {10, [&]() { savingsAccount->getSaveClientName(); }},
                 {11, [&]() { savingsAccount->showGlobalWallet(); }},
                 {12, [&]() { savingsAccount->withdrawMoney(); }},
-                {13, [&]() { savingsAccount->~UserAccountSavings();
-                             accountMap.erase(account_Iterator);
+                {13, [&]() { accountMap.erase(account_Iterator);
                              std::cout << "Account deleted." << std::endl; }},
             };
 
@@ -342,8 +336,7 @@ void menu_manageAccount(static int turn)
                 {11, [&]() { investAccount->showGlobalWallet(); }},
                 {12, [&]() { investAccount->showHistory(); }},
                 {13, [&]() { investAccount->showMyWallet(); }},
-                {14, [&]() { investAccount->~UserAccountInvest();
-                             accountMap.erase(account_Iterator);
+                {14, [&]() { accountMap.erase(account_Iterator);
                              std::cout << "Account deleted." << std::endl; }},
             };
 

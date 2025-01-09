@@ -24,6 +24,11 @@
 #include "instrument.h"
 #include "game_menu.h"
 #include "UserAccountInvest.h"
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <array>
+#include <cstdio>
 
 int main()
 {
@@ -36,7 +41,7 @@ int main()
 	static int turn { 0 };
 	sm_mn_main sm_main_choose = SM_MN_MENU;
 
-	while (gameRunning) 
+	while (gameRunning)
 	{
 		switch (sm_main_choose)
 		{
@@ -84,7 +89,7 @@ int main()
 			break;
 		}
 
-		case SM_MN_SHOW_RANKING:		// show ranking
+		case SM_MN_SHOW_RANKING:
 		{
 			//std::cout << account_Iterator->second->calculateAccountWorth();
 			showRanking();
@@ -108,10 +113,7 @@ int main()
 		}
 		case SM_MN_PLOT_CHART:
 		{
-			// Python script name
 			std::string pythonScript = "plotChart.py";
-
-			// CSV file name
 			std::string csvFile = "market_data.csv";
 
 			menu_runPythonScript(pythonScript, csvFile);

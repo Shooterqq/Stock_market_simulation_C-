@@ -37,6 +37,9 @@ public:
     UserAccount();
     UserAccount(const std::string &name, const std::string &surname, float &usd_Start_Val);
     ~UserAccount();
+    bool operator==(const UserAccount& other) const;
+    bool operator<(const UserAccount& other) const;
+    bool operator>(const UserAccount& other) const;
     std::string getClientName() const;
     std::string getClientSurname() const;
     void getNumberOfClients() const;
