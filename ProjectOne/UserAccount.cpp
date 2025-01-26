@@ -79,11 +79,6 @@ bool UserAccount::operator>(const UserAccount& other) const
     auto it1 = client_Wallet_Money.find("Money");
     auto it2 = other.client_Wallet_Money.find("Money");
 
-    if (it1 == client_Wallet_Money.end() || it2 == other.client_Wallet_Money.end()) 
-    {
-        throw std::runtime_error("Key 'Money' not found in client_Wallet_Money.");
-    }
-
     return it1->second > it2->second;
 }
 

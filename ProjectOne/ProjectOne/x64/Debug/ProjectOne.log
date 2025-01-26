@@ -36,8 +36,8 @@ E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectO
       E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(5,63):
       zobacz deklarację „accountMap”
   
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(273,36): warning C4042: „turn”: ma złą klasę magazynu
-E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(391,15): warning C4459: deklaracja „account_Iterator” powoduje ukrycie deklaracji globalnej
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(272,36): warning C4042: „turn”: ma złą klasę magazynu
+E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(390,15): warning C4459: deklaracja „account_Iterator” powoduje ukrycie deklaracji globalnej
       E:\STM32\CubeIDE\Projekty\Project_Robot_v5.0\Stock_market_simulation_C-\ProjectOne\game_menu.cpp(6,73):
       zobacz deklarację „account_Iterator”
   

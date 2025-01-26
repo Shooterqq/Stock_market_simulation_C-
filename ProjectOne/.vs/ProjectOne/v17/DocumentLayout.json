@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:UserAccountInvest.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:game_menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -19,20 +15,12 @@
       "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:UserAccount.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:UserAccount.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:UserAccountSavings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:game_menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountInvest.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -41,6 +29,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:UserAccountSavings.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:UserAccountSavings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EB201981-6F35-4B17-B84B-142A96494208}|ProjectOne.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,47 +50,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 195,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserAccountSavings.h",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.h",
-              "RelativeDocumentMoniker": "UserAccountSavings.h",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.h",
-              "RelativeToolTip": "UserAccountSavings.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-04T23:42:07.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserAccount.h",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.h",
-              "RelativeDocumentMoniker": "UserAccount.h",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.h",
-              "RelativeToolTip": "UserAccount.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-20T21:20:18.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "game_menu.h",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
-              "RelativeDocumentMoniker": "game_menu.h",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
-              "RelativeToolTip": "game_menu.h",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-27T14:49:13.185Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -99,16 +60,64 @@
               "RelativeDocumentMoniker": "UserAccountInvest.h",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountInvest.h",
               "RelativeToolTip": "UserAccountInvest.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-05T11:51:08.513Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserAccountSavings.h",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.h",
+              "RelativeDocumentMoniker": "UserAccountSavings.h",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.h",
+              "RelativeToolTip": "UserAccountSavings.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-04T23:42:07.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserAccount.h",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.h",
+              "RelativeDocumentMoniker": "UserAccount.h",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.h",
+              "RelativeToolTip": "UserAccount.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-20T21:20:18.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "game_menu.h",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
+              "RelativeDocumentMoniker": "game_menu.h",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.h",
+              "RelativeToolTip": "game_menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-27T14:49:13.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "main.h",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.h",
+              "RelativeDocumentMoniker": "main.h",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.h",
+              "RelativeToolTip": "main.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-09T18:00:11.276Z"
             }
           ]
         },
         {
           "DockedWidth": 205,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -120,79 +129,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "main.h",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.h",
-              "RelativeDocumentMoniker": "main.h",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.h",
-              "RelativeToolTip": "main.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-09T18:00:11.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserAccountSavings.cpp",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.cpp",
-              "RelativeDocumentMoniker": "UserAccountSavings.cpp",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.cpp",
-              "RelativeToolTip": "UserAccountSavings.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAFEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-04T23:41:55.826Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "UserAccount.cpp",
               "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.cpp",
               "RelativeDocumentMoniker": "UserAccount.cpp",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccount.cpp",
               "RelativeToolTip": "UserAccount.cpp",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAAAK0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAwKkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-20T21:20:13.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "game_menu.cpp",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
-              "RelativeDocumentMoniker": "game_menu.cpp",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
-              "RelativeToolTip": "game_menu.cpp",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAAAMcAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "UserAccountSavings.cpp",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.cpp",
+              "RelativeDocumentMoniker": "UserAccountSavings.cpp",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountSavings.cpp",
+              "RelativeToolTip": "UserAccountSavings.cpp",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAK8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-27T14:48:34.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T23:41:55.826Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "main.cpp",
-              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-20T13:01:52.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "UserAccountInvest.cpp",
               "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountInvest.cpp",
               "RelativeDocumentMoniker": "UserAccountInvest.cpp",
               "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\UserAccountInvest.cpp",
               "RelativeToolTip": "UserAccountInvest.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAAAF4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-04T23:20:59.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "game_menu.cpp",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
+              "RelativeDocumentMoniker": "game_menu.cpp",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\game_menu.cpp",
+              "RelativeToolTip": "game_menu.cpp",
+              "ViewState": "AgIAAH4BAAAAAAAAAAAAwJgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-27T14:48:34.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "E:\\STM32\\CubeIDE\\Projekty\\Project_Robot_v5.0\\Stock_market_simulation_C-\\ProjectOne\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAD0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-20T13:01:52.125Z"
             }
           ]
         }
